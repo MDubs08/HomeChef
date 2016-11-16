@@ -64,6 +64,6 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.OAu
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.pdb
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache

@@ -168,8 +168,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartItemsController.cs" />
+    <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\InstructionsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MealsController.cs" />
+    <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +202,8 @@
     <Content Include="Content\Pictures\CookingCarousel0.jpg" />
     <Content Include="Content\Pictures\CookingCarousel1.jpg" />
     <Content Include="Content\Pictures\CookingCarousel2.jpg" />
+    <Content Include="Content\Pictures\Lasanga.jpg" />
+    <Content Include="Content\Pictures\recipeHeader.png" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -247,6 +257,46 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Recipes\Create.cshtml" />
+    <Content Include="Views\Recipes\Delete.cshtml" />
+    <Content Include="Views\Recipes\Details.cshtml" />
+    <Content Include="Views\Recipes\Edit.cshtml" />
+    <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
+    <Content Include="Views\Videos\Create.cshtml" />
+    <Content Include="Views\Videos\Delete.cshtml" />
+    <Content Include="Views\Videos\Details.cshtml" />
+    <Content Include="Views\Videos\Edit.cshtml" />
+    <Content Include="Views\Videos\Index.cshtml" />
+    <Content Include="Views\Equipments\Create.cshtml" />
+    <Content Include="Views\Equipments\Delete.cshtml" />
+    <Content Include="Views\Equipments\Details.cshtml" />
+    <Content Include="Views\Equipments\Edit.cshtml" />
+    <Content Include="Views\Equipments\Index.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\Instructions\Create.cshtml" />
+    <Content Include="Views\Instructions\Delete.cshtml" />
+    <Content Include="Views\Instructions\Details.cshtml" />
+    <Content Include="Views\Instructions\Edit.cshtml" />
+    <Content Include="Views\Instructions\Index.cshtml" />
+    <Content Include="Views\Meals\Create.cshtml" />
+    <Content Include="Views\Meals\Delete.cshtml" />
+    <Content Include="Views\Meals\Details.cshtml" />
+    <Content Include="Views\Meals\Edit.cshtml" />
+    <Content Include="Views\Meals\Index.cshtml" />
+    <Content Include="Views\CartItems\Create.cshtml" />
+    <Content Include="Views\CartItems\Delete.cshtml" />
+    <Content Include="Views\CartItems\Details.cshtml" />
+    <Content Include="Views\CartItems\Edit.cshtml" />
+    <Content Include="Views\CartItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
