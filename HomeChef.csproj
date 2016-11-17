@@ -181,6 +181,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611161554147_InitialCreate.cs" />
+    <Compile Include="Migrations\201611161554147_InitialCreate.Designer.cs">
+      <DependentUpon>201611161554147_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Equipment.cs" />
@@ -204,6 +209,14 @@
     <Content Include="Content\Pictures\CookingCarousel2.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
     <Content Include="Content\Pictures\recipeHeader.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Email-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Facebook-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Google-Plus-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Instagram-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Linkedin-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Pinterest-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Reddit-icon-32.png" />
+    <Content Include="Content\Pictures\SocialMediaIcons\Twitter-icon-32.png" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -308,6 +321,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611161554147_InitialCreate.resx">
+      <DependentUpon>201611161554147_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

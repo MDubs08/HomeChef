@@ -6,63 +6,87 @@
 
 <h2>Details</h2>
 
-<div class="container">
-    <div class="card">
-        <div class="container-fliud">
-            <div class="wrapper row">
-                <div class="preview col-md-6">
-                    <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-                        <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                        <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                        <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                        <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
-                    </div>
-                    <ul class="preview-thumbnail nav nav-tabs">
-                        <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                        <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                    </ul>
+<div id="recipeDetails" class="container">
+    <div class="preview col-md-6">
+        <div class="preview-pic tab-content">
+            <div id="recipeImage" class="wrapper">
+                <span id="isFavorite" class="glyphicon glyphicon-heart-empty"></span>
+                <img src="~/Content/Pictures/Lasanga.jpg">
+            </div>
+        </div>
+        <div class="row" align="center" id="socialMediaButtons">
+            <img src="~/Content/Pictures/SocialMediaIcons/Facebook-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Instagram-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Pinterest-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Twitter-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Reddit-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Linkedin-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Google-Plus-icon-32.png" />
+            <img src="~/Content/Pictures/SocialMediaIcons/Email-icon-32.png" />
+        </div>
+    </div>
+    <div id="recipeDetails" class="col-md-6">
+        <h4 id="recipeTitle" align="center">@Html.DisplayFor(model => model.Name)</h4>
+        <div id="rating" align="center">
+            <div id="stars">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <span class="review-no">41 reviews</span>
+        </div>
+        <hr />
+        <div id="recipeDescription" class="row">
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+        <hr />
+        <div id="recipeDetailsFooter" class="row">
+            <div class="col-sm-4">
+                <h5 id="recipeDetails" align="center">Cook Time</h5>
+                <hr />
+                <div class="col-sm-12">
+                    <h5 align="center">@Html.DisplayFor(model => model.LengthToMake) Minutes</h5>
                 </div>
-                <div class="details col-md-6">
-                    <h3 class="product-title">men's shoes fashion</h3>
-                    <div class="rating">
-                        <div class="stars">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <span class="review-no">41 reviews</span>
-                    </div>
-                    <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                    <h4 class="price">current price: <span>$180</span></h4>
-                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                    <h5 class="sizes">
-                        sizes:
-                        <span class="size" data-toggle="tooltip" title="small">s</span>
-                        <span class="size" data-toggle="tooltip" title="medium">m</span>
-                        <span class="size" data-toggle="tooltip" title="large">l</span>
-                        <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                    </h5>
-                    <h5 class="colors">
-                        colors:
-                        <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                        <span class="color green"></span>
-                        <span class="color blue"></span>
-                    </h5>
-                    <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
-                    </div>
+            </div>
+            <div class="col-sm-4">
+                <h5 id="recipeDetails" align="center">Serving Size</h5>
+                <hr />
+                <div class="col-sm-12">
+                    <h5 align="center">@Html.DisplayFor(model => model.ServingSize) People</h5>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h5 id="recipeDetails" align="center">Prep Time</h5>
+                <hr />
+                <div class="col-sm-12">
+                    <h5 align="center">@Html.DisplayFor(model => model.Instruction.PrepTime) Minutes</h5>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div id="recipeDetails" class="container">
+    <div id="recipeTabBox" class="col-sm-12">
+        <div id="recipeCards"class="card">
+            <ul class="nav nav-tabs" role="tablist" id="recipeTabs">
+                <li role="presentation" class="active"><a href="#Ingredients" aria-controls="Ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
+                <li role="presentation"><a href="#Instructions" aria-controls="Instructions" role="tab" data-toggle="tab">Instructions</a></li>
+                <li role="presentation"><a href="#Reviews" aria-controls="Reviews" role="tab" data-toggle="tab">Reviews</a></li>
+                <li role="presentation"><a href="#Similar" aria-controls="Similar" role="tab" data-toggle="tab">Similar Recipes</a></li>
+            </ul>
+            <div class="tab-content" id="recipeContent">
+                <div role="tabpanel" class="tab-pane active" id="Ingredients">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                <div role="tabpanel" class="tab-pane" id="Instructions">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                <div role="tabpanel" class="tab-pane" id="Reviews">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                <div role="tabpanel" class="tab-pane" id="Similar">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div>
     <h4>Recipe</h4>

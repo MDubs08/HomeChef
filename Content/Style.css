@@ -1,6 +1,12 @@
 ﻿body{
     background-color:white;
 }
+h4#recipeTitle{
+    font-size: 30px;
+}
+h5#recipeDetails{
+    font-size:16px;
+}
 /*Buttons*/
 .btn-fb{
     color: #fff;
@@ -77,6 +83,7 @@
     }
 }
 
+/*Carousel*/
 .hero {
     position: absolute;
     top: 50%;
@@ -125,7 +132,6 @@
     opacity: .7;
 }
 
-/*Carousel*/
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
@@ -322,4 +328,48 @@
 /*Links*/
 #recipeLink{
     padding-left: 15px;
+}
+/*Recipe Details*/
+.wrapper#recipeImage{
+    width: 512px;
+    height: 300px;
+    image-rendering:auto;
+    display:inline-block;
+    padding-top: 10px;
+}
+.wrapper#recipeImage img{
+    height: 100%;
+    width: 100%;
+    position:static;
+}
+.wrapper .glyphicon{
+    position:relative;
+    top: 30px;
+    left: 475px;
+}
+.container#recipeDetails{
+    background-color: #FFFCF2;
+}
+.row#recipeDetailsFooter{
+    vertical-align: bottom;
+}
+.row#recipeDescription{
+    height: 126px;
+}
+.row#socialMediaButtons{
+    padding-top: 40px;
+}
+.card#recipeCards{
+    background-color: #FFFCF2;
+}
+.nav#recipeTabs{
+
+}
+.tab-content#recipeContent{
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-left: solid black thin;
+    border-bottom: solid black thin;
+    border-right: solid black thin;
+    border-radius: 3px;
 }

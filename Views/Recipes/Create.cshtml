@@ -53,11 +53,6 @@
             </div>
         </div>
     </div>
-}
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h3>Ingredients</h3>
@@ -78,12 +73,6 @@
         </div>
     </div>
 
-}
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
         <h3>Instructions</h3>
         <div id="recipeLink">@Html.ActionLink("Create Instructions", "Create", "Instructions")</div>
@@ -102,11 +91,6 @@
             </div>
         </div>
     </div>
-}
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h3>Images</h3>
@@ -126,11 +110,6 @@
             </div>
         </div>
     </div>
-}
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h3>Videos</h3>
@@ -150,15 +129,10 @@
             </div>
         </div>
     </div>
-}
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <h3>Categories</h3>
-        <div id="recipeLink">@Html.ActionLink("Create Category", "Create", "Category")</div>
+        <div id="recipeLink">@Html.ActionLink("Create Category", "Create", "Meals")</div>
         <hr />
         <div class="form-group">
             @Html.LabelFor(model => model.MealID, "MealID", htmlAttributes: new { @class = "control-label col-md-2" })

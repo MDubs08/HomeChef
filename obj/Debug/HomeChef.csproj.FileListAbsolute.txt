@@ -66,4 +66,6 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.Twi
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.pdb
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.InitialCreate.resources
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csproj.GenerateResource.Cache
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache

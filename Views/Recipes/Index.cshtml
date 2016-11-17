@@ -27,12 +27,13 @@
                     </div>
                     <div class="info">
                         <div class="title">
-                            <a target="_blank" href=@Html.ActionLink(null, "Details", new { id=item.ID })>@Html.DisplayFor(modelItem => item.Name)</a>
+                            <a target="_blank" href=@Url.Action("Details", new { id=item.ID })>@Html.DisplayFor(modelItem => item.Name)</a>
                         </div>
                         <div class="desc">@Html.DisplayFor(modelItem => item.Description)</div>
                     </div>
                     <h1 class="rating-num">
-                        @Html.DisplayFor(modelItem => item.Rating)
+                        0
+                        <!--Html.DisplayFor(modelItem => item.Rating)-->
                     </h1>
                     <div class="rating">
                         <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
