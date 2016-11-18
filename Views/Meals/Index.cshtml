@@ -4,8 +4,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div id="categories" class="container-fluid bg-overlay">
+    <div class="row">
+        <h1>Categories</h1>
+        <br />
+        <h4>Chooce your meal path<br />Dinner?? Dessert?? Search anyway you want</h4>
+        <br />
+        <br />
+    </div>
+</div>
 
+<div id="MealTime" class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+        }
+    </div>
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

@@ -26,5 +26,9 @@ namespace HomeChef.Controllers
 
             return View();
         }
+        public ActionResult MyRecipes()
+        {
+            return View();
+        }
     }
 }

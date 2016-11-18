@@ -1,0 +1,36 @@
+﻿
+
+@{
+    ViewBag.Title = "MyRecipes";
+}
+
+<div id="myRecipes" class="container-fluid bg-overlay">
+    <div class="row">
+        <h1>My Recipes</h1>
+        <br />
+        <h4>Your recipes, your control.<br />Create new recipes and find old ones</h4>
+        <br />
+        <br />
+    </div>
+</div>
+
+<div id="myRecipeOptions" class="container">
+    <div class="row">
+        <div id="myRecipeTabs" class="col-sm-3">
+            <h4 align="center">My Cookbook</h4>
+            <img href="@Url.Action("Recipes", "Index")"src="~/Content/Pictures/OtherIcons/CookbookIcon.png" />
+        </div>
+        <div id="myRecipeTabs" class="col-sm-3">
+            <h4 align="center">@Html.ActionLink("Create Recipes", "Create", "Recipes")</h4>
+            <img href="@Url.Action("Create", "Recipes")"src="~/Content/Pictures/OtherIcons/ChefIcon.png" />
+        </div>
+        <div id="myRecipeTabs" class="col-sm-3">
+            <h4 align="center">My Favorites</h4>
+            <img src="~/Content/Pictures/OtherIcons/CookingIcon.png" />
+        </div>
+        <div id="myRecipeTabs" class="col-sm-3">
+            <h4 align="center">@Html.ActionLink("Shopping Cart", "Index", "CartItems")</h4>
+            <img href="@Url.Action("Index", "CartItems")"src="~/Content/Pictures/OtherIcons/ShoppingCartIcon.png" />
+        </div>
+    </div>
+</div>

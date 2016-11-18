@@ -208,16 +208,24 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Pictures\AdRevenue\Construction_of_New_Clinical_Tower_at_Shaukat_Khanum_Hospital_Lahore.gif" />
+    <Content Include="Content\Pictures\categoriesHeader.jpg" />
     <Content Include="Content\Pictures\chef-512.png" />
     <Content Include="Content\Pictures\CookingCarousel0.jpg" />
     <Content Include="Content\Pictures\CookingCarousel1.jpg" />
     <Content Include="Content\Pictures\CookingCarousel2.jpg" />
+    <Content Include="Content\Pictures\cookingHome1.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\Harambe.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\JessicaAlba.png" />
     <Content Include="Content\Pictures\CustomerTestimonial\JohnCena.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\KenBone.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
+    <Content Include="Content\Pictures\myRecipesHeader.jpg" />
+    <Content Include="Content\Pictures\OtherIcons\ChefIcon.png" />
+    <Content Include="Content\Pictures\OtherIcons\CookbookIcon.png" />
+    <Content Include="Content\Pictures\OtherIcons\CookingIcon.png" />
+    <Content Include="Content\Pictures\OtherIcons\ShoppingCartIcon.png" />
     <Content Include="Content\Pictures\recipeHeader.png" />
+    <Content Include="Content\Pictures\shoppingCartHeader.jpg" />
     <Content Include="Content\Pictures\SocialMediaIcons\Email-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Facebook-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Google-Plus-icon-32.png" />
@@ -319,6 +327,7 @@
     <Content Include="Views\CartItems\Details.cshtml" />
     <Content Include="Views\CartItems\Edit.cshtml" />
     <Content Include="Views\CartItems\Index.cshtml" />
+    <Content Include="Views\Home\MyRecipes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

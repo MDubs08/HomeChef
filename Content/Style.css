@@ -184,6 +184,36 @@ h5#recipeDetails{
     padding-top: 50px;
     text-align: center;
 }
+.bg-overlay#myRecipes {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/myRecipesHeader.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
+.bg-overlay#shoppingCart {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/shoppingCartHeader.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
+.bg-overlay#categories {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/categoriesHeader.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
 
 /*Recipe Cards*/
 
@@ -371,6 +401,14 @@ h5#recipeDetails{
 .container#recipeDetails{
     background-color: #FFFCF2;
 }
+.col-sm-3#myRecipeTabs{
+    padding: 20px;
+}
+.col-sm-3#myRecipeTabs img{
+    padding-top: 20px;
+    height: 256px;
+    width: 256px;
+}
 .row#recipeDetailsFooter{
     vertical-align: bottom;
 }
@@ -406,4 +444,22 @@ h5#recipeDetails{
 .row#ratingLine{
     width: 35px;
     line-height: 1px;
+}
+
+/*Home Page*/
+.jumbotron#iconDisplay{
+    padding: 50px;
+    animation:ease-in;
+}
+.col-lg-3#homeIcons{
+    padding: 40px;
+}
+.jumbotron-fluid#homeBody {
+    padding-top: 40px;
+    height: 900px;
+    width: 100%;
+    background-image: url('Pictures/cookingHome1.jpg');
+    display:inline-block;
+    background-repeat:no-repeat;
+    background-size:cover;
 }

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeChef.Models;
+using System.IO;
 
 namespace HomeChef.Controllers
 {
@@ -48,6 +49,8 @@ namespace HomeChef.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,ImageFile")] Image image)
         {
+            HttpPostedFileBase file = Request.Files["ImageData"];
+
             if (ModelState.IsValid)
             {
                 db.Image.Add(image);
