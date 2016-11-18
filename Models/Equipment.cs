@@ -13,5 +13,7 @@ namespace HomeChef.Models
         public int ID { get; set; }
         [Display(Name = "Equipment")]
         public string Name { get; set; }
+        [Display(Name = "Temperature Type")]
+        public List<string> Temperature { get; set; }
     }
 }

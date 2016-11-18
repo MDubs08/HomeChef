@@ -3,8 +3,19 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<div class="container" id="header">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1 align="center">$ AD SPACE $</h1>
+        </div>
+        <div class="col-sm-4" id="adRevenue" align="center">
+            <iframe src="//giphy.com/embed/l2Sq7slmyIePuP32g" width="300" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <h1 align="center">$ MORE ADS $</h1>
+        </div>
+    </div>
+</div>
 
 <div id="recipeDetails" class="container">
     <div class="preview col-md-6">
@@ -39,7 +50,9 @@
         </div>
         <hr />
         <div id="recipeDescription" class="row">
-            <p>@Html.DisplayFor(model => model.Description)</p>
+            <div class="col-sm-12">
+                <p>@Html.DisplayFor(model => model.Description)</p>
+            </div>
         </div>
         <hr />
         <div id="recipeDetailsFooter" class="row">
@@ -69,120 +82,289 @@
 </div>
 <div id="recipeDetails" class="container">
     <div id="recipeTabBox" class="col-sm-12">
-        <div id="recipeCards"class="card">
+        <div id="recipeCards" class="card">
             <ul class="nav nav-tabs" role="tablist" id="recipeTabs">
                 <li role="presentation" class="active"><a href="#Ingredients" aria-controls="Ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
                 <li role="presentation"><a href="#Instructions" aria-controls="Instructions" role="tab" data-toggle="tab">Instructions</a></li>
-                <li role="presentation"><a href="#Reviews" aria-controls="Reviews" role="tab" data-toggle="tab">Reviews</a></li>
                 <li role="presentation"><a href="#Similar" aria-controls="Similar" role="tab" data-toggle="tab">Similar Recipes</a></li>
+                <li role="presentation"><a href="#Reviews" aria-controls="Reviews" role="tab" data-toggle="tab">Reviews</a></li>
             </ul>
             <div class="tab-content" id="recipeContent">
-                <div role="tabpanel" class="tab-pane active" id="Ingredients">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                <div role="tabpanel" class="tab-pane" id="Instructions">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                <div role="tabpanel" class="tab-pane" id="Reviews">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                <div role="tabpanel" class="tab-pane" id="Similar">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+                <div role="tabpanel" class="tab-pane active" id="Ingredients">
+                    @Html.DisplayFor(model => model.Ingredient.Name)
+                </div>
+                <div role="tabpanel" class="tab-pane" id="Instructions">
+                    @Html.DisplayFor(model => model.Instruction.Name)
+                </div>
+                <div role="tabpanel" class="tab-pane" id="Similar">
+                    More pictures of similar @Html.DisplayFor(model => model.Name)
+                </div>
+                <div role="tabpanel" class="tab-pane" id="Reviews">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4" align="center">
+                                <div class="rating-block" align="center">
+                                    <h4 align="center">Average user rating</h4>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <br />
+                                <div class="pull-left" align="center">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">1</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">0</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="customerTestimonials"class="col-sm-8">
+                                <div class="container" align="center" id="customerTestimonials">
+                                    <div class="row">
+                                        <div class='col-md-offset-2 col-md-8 text-center'>
+                                            <h2><strong>Customer Testimonials</strong></h2>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-sm-12'>
+                                            <div class="carousel slide" data-ride="carousel" id="quote-carousel" data-interval="4000">
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#quote-carousel" data-slide-to="1"></li>
+                                                    <li data-target="#quote-carousel" data-slide-to="2"></li>
+                                                    <li data-target="#quote-carousel" data-slide-to="3"></li>
+                                                </ol>
+                                                <div class="carousel-inner">
+                                                    <div class="item active">
+                                                        <blockquote>
+                                                            <div class="row">
+                                                                <div class="col-sm-3 text-center">
+                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/JessicaAlba.png" style="width: 100px;height:100px;">
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <p>When I thought I had enough...the Patty Wagon showed me 'The Beef'...</p>
+                                                                    <small>Jessica Alba</small>
+                                                                </div>
+                                                            </div>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="item">
+                                                        <blockquote>
+                                                            <div class="row">
+                                                                <div class="col-sm-3 text-center">
+                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/Harambe.jpg" style="width: 100px;height:100px;">
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <p>This was the best...last meal ever!</p>
+                                                                    <small>Harambe</small>
+                                                                </div>
+                                                            </div>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="item">
+                                                        <blockquote>
+                                                            <div class="row">
+                                                                <div class="col-sm-3 text-center">
+                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/JohnCena.jpg" style="width: 100px;height:100px;">
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <p>...all I want is more of that meat in my mouth!</p>
+                                                                    <small>John Cena</small>
+                                                                </div>
+                                                            </div>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="item">
+                                                        <blockquote>
+                                                            <div class="row">
+                                                                <div class="col-sm-3 text-center">
+                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/KenBone.jpg" style="width: 100px;height:100px;">
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <p>Their food met all of my energy needs while remaining environmentally friendly and minimizing weight loss!</p>
+                                                                    <small>Ken Bone</small>
+                                                                </div>
+                                                            </div>
+                                                        </blockquote>
+                                                    </div>
+                                                </div>
+                                                <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                                                <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div>
+        <h4>Recipe</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Image.Name)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.Image.Name)
+            </dd>
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Ingredient.Name)
+            </dt>
 
-<div>
-    <h4>Recipe</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Image.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ingredient.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Instruction.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ingredient.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Instruction.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ingredient.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Meal.MealTime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Instruction.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Meal.MealTime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Instruction.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Video.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Meal.MealTime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Video.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Meal.MealTime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Video.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Video.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ServingSize)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ServingSize)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LengthToMake)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ServingSize)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LengthToMake)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ServingSize)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LengthToMake)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LengthToMake)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.isFavorite)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.isFavorite)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.isFavorite)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.isFavorite)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

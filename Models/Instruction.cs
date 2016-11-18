@@ -13,8 +13,9 @@ namespace HomeChef.Models
         public int ID { get; set; }
         [Display(Name = "Instructions")]
         public string Name { get; set; }
+        [Display(Name = "Steps")]
+        public List<string> Steps = new List<string>();
         [Display(Name = "Prep Time")]
         public int PrepTime { get; set; }
-
     }
 }

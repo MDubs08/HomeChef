@@ -20,4 +20,19 @@ namespace HomeChef.Models
         [Display(Name = "Holiday Name")]
         public string HolidayMeal { get; set; }
     }
+    public class HolidayMeal
+    {
+        public string Christmas = "Christmas";
+        public string CincoDeMayo = "Cinco De Mayo";
+        public string Easter = "Easter";
+        public string FathersDay = "Father's Day";
+        public string Halloween = "Halloween";
+        public string Hanukkah = "Hanukkah";
+        public string IndependenceDay = "Independence Day";
+        public string MothersDay = "Mother's Day";
+        public string NewYears = "New Year's";
+        public string StPatricksDay = "St. Patrick's Day";
+        public string Thanksgiving = "Thanksgiving";
+        public string ValentinesDay = "Valentine's Day";
+    }
 }
