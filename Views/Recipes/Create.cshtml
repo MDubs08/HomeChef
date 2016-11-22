@@ -46,105 +46,136 @@
                 @Html.ValidationMessageFor(model => model.LengthToMake, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
 
     <div class="form-horizontal">
         <h3>Ingredients</h3>
-        <div id="recipeLink">@Html.ActionLink("Create Ingredients", "Create", "Ingredients")</div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.IngredientID, "IngredientID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Ingredient.Quantity, "Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IngredientID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IngredientID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Ingredient.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ingredient.Quantity, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Ingredient.Measurement, "Measurement", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Ingredient.Measurement, null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Ingredient.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ingredient.Name, "Ingredient", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ingredient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ingredient.Name, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-horizontal">
         <h3>Instructions</h3>
-        <div id="recipeLink">@Html.ActionLink("Create Instructions", "Create", "Instructions")</div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.InstructionID, "InstructionID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Instruction.Name, "Instructions Label", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("InstructionID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.InstructionID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Instruction.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Instruction.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Instruction.PrepTime, "Prep Time", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Instruction.PrepTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Instruction.PrepTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Instruction.Steps, "Steps", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Instruction.Steps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Instruction.Steps, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-horizontal">
         <h3>Images</h3>
-        <div id="recipeLink">@Html.ActionLink("Upload Images", "Create", "Images")</div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.ImageID, "ImageID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Image.Name, "Image Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ImageID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ImageID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Image.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Image.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Image.ImageFile, new { type = "file", htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image.ImageFile, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-horizontal">
         <h3>Videos</h3>
-        <div id="recipeLink">@Html.ActionLink("Upload Videos", "Create", "Videos")</div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.VideoID, "VideoID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Video.Name, "Video Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("VideoID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.VideoID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Video.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Video.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Video.VideoFile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Video.VideoFile, new { type = "file", htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Video.VideoFile, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-horizontal">
         <h3>Categories</h3>
-        <div id="recipeLink">@Html.ActionLink("Create Category", "Create", "Meals")</div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.MealID, "MealID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Meal.MealTime, "Meal Time Frame", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MealID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MealID, "", new { @class = "text-danger" })
+                @Html.EnumDropDownListFor(model => model.Meal.MealTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.MealTime, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Meal.MealType, "Meal Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Meal.MealType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.MealType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.isHoliday, "Holiday Meal", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Meal.isHoliday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.isHoliday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.HolidayMeal, "Holiday Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Meal.HolidayMeal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.HolidayMeal, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>

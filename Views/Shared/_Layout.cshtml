@@ -72,43 +72,44 @@
     <!@Html.Partial("_LoginPartial")>
     <div class="container-fluid">
         @RenderBody()
-        <hr />
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 footerleft ">
-                        <h4 id="footerCompany">Home Chef</h4>
-                        <p>Family owned since 1923 with a proud history of taking Grandma's recipes and claiming them as our own. You thought Apple was bad at taking ideas!</p>
-                        <p><i class="fa fa-map-pin"></i>333 N Plankinton Ave, Milwaukee, WI 53203</p>
-                        <p><i class="fa fa-phone"></i>Phone: (555) 867-5309</p>
-                        <p><i class="fa fa-envelope"></i>E-mail : allthenope@gmail.com</p>
-                        <p>&copy; @DateTime.Now.Year - Home Chef</p>
-                    </div>
-                    <div class="col-md-3 col-sm-3 footerleft ">
-                        <h6>GENERAL LINKS</h6>
-                        <ul class="footer-ul">
-                            <li><a href="#"> Career</a></li>
-                            <li><a href="#"> Privacy Policy</a></li>
-                            <li><a href="#"> Terms & Conditions</a></li>
-                            <li><a href="#"> Ranking</a></li>
-                            <li><a href="#"> Case Studies</a></li>
-                            <li><a href="#"> Frequently Ask Questions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-md-3 footerleft">
-                        <h6>SITE LINKS</h6>
-                        <ul class="footer-ul">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Recipes", "Index", "Recipes")</li>
-                            <li>@Html.ActionLink("Categories", "Index", "Meals")</li>
-                            <li>@Html.ActionLink("Account", "Index", "Manage")</li>
-                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                        </ul>
-                    </div>
+    </div>
+    <hr />
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 footerleft ">
+                    <h4 id="footerCompany">Home Chef</h4>
+                    <p>Family owned since 1923 with a proud history of taking Grandma's recipes and claiming them as our own. You thought Apple was bad at taking ideas!</p>
+                    <p><i class="fa fa-map-pin"></i>333 N Plankinton Ave, Milwaukee, WI 53203</p>
+                    <p><i class="fa fa-phone"></i>Phone: (555) 867-5309</p>
+                    <p><i class="fa fa-envelope"></i>E-mail : allthenope@gmail.com</p>
+                    <p>&copy; @DateTime.Now.Year - Home Chef</p>
+                </div>
+                <div class="col-md-3 col-sm-3 footerleft ">
+                    <h6>GENERAL LINKS</h6>
+                    <ul class="footer-ul">
+                        <li><a href="#"> Career</a></li>
+                        <li><a href="#"> Privacy Policy</a></li>
+                        <li><a href="#"> Terms & Conditions</a></li>
+                        <li><a href="#"> Ranking</a></li>
+                        <li><a href="#"> Case Studies</a></li>
+                        <li><a href="#"> Frequently Ask Questions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-md-3 footerleft">
+                    <h6>SITE LINKS</h6>
+                    <ul class="footer-ul">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Recipes", "Index", "Recipes")</li>
+                        <li>@Html.ActionLink("Categories", "Index", "Meals")</li>
+                        <li>@Html.ActionLink("Account", "Index", "Manage")</li>
+                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

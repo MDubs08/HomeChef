@@ -45,11 +45,11 @@ namespace HomeChef.Controllers
         // GET: Recipes/Create
         public ActionResult Create()
         {
-            ViewBag.ImageID = new SelectList(db.Image, "ID", "Name");
-            ViewBag.IngredientID = new SelectList(db.Ingredient, "ID", "Name");
-            ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name");
-            ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime");
-            ViewBag.VideoID = new SelectList(db.Video, "ID", "Name");
+            List<Ingredient> ingredient = new List<Ingredient>();
+            Instruction instruction = new Instruction();
+            Meal meal = new Meal();
+            Image image = new Image();
+            Video video = new Video();
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,IngredientID,InstructionID,ImageID,VideoID,MealID")] Recipe recipe)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {

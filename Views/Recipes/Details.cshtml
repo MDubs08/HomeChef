@@ -91,10 +91,13 @@
             </ul>
             <div class="tab-content" id="recipeContent">
                 <div role="tabpanel" class="tab-pane active" id="Ingredients">
-                    @Html.DisplayFor(model => model.Ingredient.Name)
+                    @Html.DisplayFor(model => model.Ingredient.Quantity) @Html.DisplayFor(model => model.Ingredient.Measurement) @Html.DisplayFor(model => model.Ingredient.Name)
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Instructions">
-                    @Html.DisplayFor(model => model.Instruction.Name)
+                    @foreach (var step in Model.Instruction.Steps)
+                    {
+                        @Html.DisplayFor(model => model.Instruction.Steps)
+                    }
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Similar">
                     More pictures of similar @Html.DisplayFor(model => model.Name)
@@ -187,7 +190,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="customerTestimonials"class="col-sm-8">
+                            <div id="customerTestimonials" class="col-sm-8">
                                 <div class="container" align="center" id="customerTestimonials">
                                     <div class="row">
                                         <div class='col-md-offset-2 col-md-8 text-center'>
@@ -265,106 +268,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            @Html.RouteLink("Leave a review", "Create", "Reviews", new { id =  Model.ID})
+                            @Html.ActionLink("See all reviews", "Details", "Reviews", new { id = Model.ID })
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <h4>Recipe</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Image.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Image.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Ingredient.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Ingredient.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Instruction.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Instruction.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Meal.MealTime)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Meal.MealTime)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Video.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Video.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ServingSize)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ServingSize)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.LengthToMake)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.LengthToMake)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Rating)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Rating)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.isFavorite)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.isFavorite)
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+</div>
