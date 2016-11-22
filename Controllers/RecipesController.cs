@@ -21,6 +21,12 @@ namespace HomeChef.Controllers
             return View(recipe.ToList());
         }
 
+        public IEnumerable<Recipe> Recipes()
+        {
+            List<Recipe> recipe = new List<Recipe>();
+            return recipe;
+        }
+
         // GET: Recipes/Details/5
         public ActionResult Details(int? id)
         {

@@ -69,5 +69,11 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.pdb
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.InitialCreate.resources
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csproj.GenerateResource.Cache
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.update2.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.listtoenum.resources
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Net.Http.Formatting.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Web.Http.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Web.Http.WebHost.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Net.Http.Formatting.xml
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Web.Http.xml
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Web.Http.WebHost.xml
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.ratingsystem.resources

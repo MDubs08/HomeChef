@@ -53,8 +53,8 @@
                         var additionalSteps = "";
                         $.each(steps.items, function (index, instructions) {
                             var addedSteps = '<div class="form-group">';
-
-                        })
+                            addedSteps += '@Html.LabelFor(model => model.Steps, htmlAttributes: new { @class = "control-label col-md-2" }) '
+                                      })
                     }
                 })
             }

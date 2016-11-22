@@ -45,7 +45,6 @@ h5#recipeDetails{
 }
 .btn.btn-primary{
     margin: 2px;
-    padding
     color: #F1FAEE;
     background-color: #1D3557;
     border-color: #2980b9;
@@ -174,8 +173,11 @@ h5#recipeDetails{
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
 }
+
+
+/*Overlays*/
 .bg-overlay#recipes {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/recipeHeader.png');
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/recipeHeader.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -462,4 +464,66 @@ h5#recipeDetails{
     display:inline-block;
     background-repeat:no-repeat;
     background-size:cover;
+}
+/*Footer*/
+footer { 
+    background-color:#0c1a1e; 
+    min-height:350px; 
+    font-family: 'Open Sans', sans-serif;
+
+}
+.footerleft { 
+    margin-top:50px; 
+    padding:0 36px;
+
+}
+.logofooter {
+     margin-bottom:10px; 
+     font-size:25px; 
+     color:#fff; 
+     font-weight:700;
+
+}
+.footerleft h4{
+    color:#55ACCC;
+}
+.footerleft h6{
+    color:#55ACCC;
+}
+.footerleft p {
+     color:#fff; 
+     font-size:12px !important; 
+     font-family: 'Open Sans', sans-serif; 
+     margin-bottom:15px;
+
+}
+.footerleft p i {
+     width:20px; 
+     color:#999;
+
+}
+.footer-ul { 
+    list-style-type:none;  
+    padding-left:0px; 
+    margin-left:2px;
+
+}
+.footer-ul li { 
+    line-height:29px; 
+    font-size:12px;
+
+}
+.footer-ul li a { 
+    color:#a0a3a4; 
+    transition: color 0.2s linear 0s, background 0.2s linear 0s; 
+
+}
+.footer-ul i {
+     margin-right:10px;
+
+}
+.footer-ul li a:hover {
+    transition: color 0.2s linear 0s, background 0.2s linear 0s; 
+    color:#55ACCC; 
+
 }

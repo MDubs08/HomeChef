@@ -52,12 +52,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,6 +179,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartItemsController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
@@ -176,6 +189,8 @@
     <Compile Include="Controllers\InstructionsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,6 +208,10 @@
     <Compile Include="Migrations\201611212354470_list to enum.Designer.cs">
       <DependentUpon>201611212354470_list to enum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611221950311_rating system.cs" />
+    <Compile Include="Migrations\201611221950311_rating system.Designer.cs">
+      <DependentUpon>201611221950311_rating system.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -204,6 +223,7 @@
     <Compile Include="Models\Instruction.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -223,12 +243,24 @@
     <Content Include="Content\Pictures\CustomerTestimonial\JohnCena.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\KenBone.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Appetizer.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Breakfast.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\brunch.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Dessert.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\dinner.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Drink.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Lunch.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Main_Course.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Salad.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Side_Dish.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Snack.jpg" />
+    <Content Include="Content\Pictures\MenuPictures\Soup.jpg" />
     <Content Include="Content\Pictures\myRecipesHeader.jpg" />
     <Content Include="Content\Pictures\OtherIcons\ChefIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\CookbookIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\CookingIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\ShoppingCartIcon.png" />
-    <Content Include="Content\Pictures\recipeHeader.png" />
+    <Content Include="Content\Pictures\recipeHeader.jpg" />
     <Content Include="Content\Pictures\shoppingCartHeader.jpg" />
     <Content Include="Content\Pictures\SocialMediaIcons\Email-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Facebook-icon-32.png" />
@@ -333,6 +365,11 @@
     <Content Include="Views\CartItems\Edit.cshtml" />
     <Content Include="Views\CartItems\Index.cshtml" />
     <Content Include="Views\Home\MyRecipes.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611212354470_list to enum.resx">
       <DependentUpon>201611212354470_list to enum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611221950311_rating system.resx">
+      <DependentUpon>201611221950311_rating system.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
