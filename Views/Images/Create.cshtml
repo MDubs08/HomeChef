@@ -24,48 +24,11 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
-        <input type="file" class="upload" id="uploadImage" /><br />
-        <img id="uploadedImage" alt="My Upload" style="width:180px;" />
-        <script>
-            function sendFile(file) {
-                var formData = new FormData();
-                formData.append('file', $('#uploadImage')[0].files[0]);
-                $.ajax({
-                    type: 'post',
-                    url: 'fileUploader.ashx',
-                    data: formData,
-                    success: function (status) {
-                        if (status != 'error') {
-                            var my_path = "MediaUploader/" + status;
-                            $("#uploadedImage").attr("src", my_path);
-                        }
-                    },
-                    processData: false,
-                    contentType: false,
-                    error: function () {
-                        alert("Something went wrong");
-                    }
-                });
-            }
-            var _URL = window.URL || window.webkitURL;
-            $("#uploadedImage").on('change', function () {
-                var file, img;
-                if ((file = this.files[0])) {
-                    img = new Image();
-                    img.onload = function () {
-                        sendFile(file);
-                    };
-                    img.onerror = function () {
-                        alert("Not a valid file:" + file.type);
-                    };
-                    img.src = _URL.createObjectURL(file);
-                }
-            });
-        </script>
+        
         <div class="form-group">
             @Html.LabelFor(model => model.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageFile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.ImageFile, new { type="file", htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ImageFile, "", new { @class = "text-danger" })
             </div>
         </div>

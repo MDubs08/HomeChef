@@ -34,15 +34,31 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Steps, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Steps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Steps, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Steps, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-control">
-            <input type="text">
-            <input type="submit" class="btn btn-hero" onclick="addStep()" />
-        </div>
+        <div class="form-group" id="addSteps">
 
+        </div>
+        <input type="submit" value="Add Steps" onclick="addSteps()" />\
+        <script>
+            function addSteps() {
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    url: '',
+                    success: function(steps)
+                    {
+                        var additionalSteps = "";
+                        $.each(steps.items, function (index, instructions) {
+                            var addedSteps = '<div class="form-group">';
+
+                        })
+                    }
+                })
+            }
+        </script>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

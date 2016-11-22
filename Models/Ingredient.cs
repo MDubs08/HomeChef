@@ -16,6 +16,26 @@ namespace HomeChef.Models
         [Display(Name = "Quantity")]
         public int Quantity { get; set; }
         [Display(Name = "Measurement")]
-        public List<string> Measurement { get; set; }
+        public Measurement Measurement { get; set; }
+    }
+    public enum Measurement
+    {
+        Centimeter,
+        Cup,
+        FluidOunce,
+        Foot,
+        Gallon,
+        Gram,
+        Inch,
+        Kilogram,
+        Liter,
+        Meter,
+        Milliliter,
+        Ounce,
+        Pint,
+        Pound,
+        Quart,
+        Tablespoon,
+        Teaspoon
     }
 }

@@ -14,6 +14,11 @@ namespace HomeChef.Models
         [Display(Name = "Equipment")]
         public string Name { get; set; }
         [Display(Name = "Temperature Type")]
-        public List<string> Temperature { get; set; }
+        public Temperature Temperature { get; set; }
+    }
+    public enum Temperature
+    {
+        Celcius,
+        Fahrenheit
     }
 }

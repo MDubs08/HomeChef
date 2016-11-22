@@ -49,8 +49,6 @@ namespace HomeChef.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,ImageFile")] Image image)
         {
-            HttpPostedFileBase file = Request.Files["ImageData"];
-
             if (ModelState.IsValid)
             {
                 db.Image.Add(image);
