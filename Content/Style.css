@@ -62,7 +62,14 @@ h5#recipeDetails{
     outline: none;
     margin: 20px auto;
 }
+.btn-glyphicon { 
+    padding:1px; background:#ffffff; margin-right:4px;
 
+}
+.icon-btn { 
+    padding: 3px 10px 5px 5px; border-radius:5px;
+
+}
 /*Social Media*/
 #login-dp{
     min-width: 250px;

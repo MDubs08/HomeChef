@@ -27,7 +27,6 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Recipes<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-
                             <li>@Html.ActionLink("Home", "MyRecipes", "Home")</li>
                             <li>@Html.ActionLink("Shopping Cart", "Index", "CartItems")</li>
                             <li>@Html.ActionLink("My Account", "Index", "Manage")</li>
@@ -69,7 +68,6 @@
             </div>
         </div>
     </nav>
-    <!@Html.Partial("_LoginPartial")>
     <div class="container-fluid">
         @RenderBody()
     </div>
@@ -110,10 +108,13 @@
             </div>
         </div>
     </footer>
-    </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
 </body>
 </html>

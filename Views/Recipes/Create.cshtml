@@ -74,6 +74,24 @@
                 @Html.ValidationMessageFor(model => model.Ingredient.Name, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group" id="ingredientRow">
+
+        </div>
+        <script>
+            $("addIngredient").click(function () {
+                $.ajax({
+                    url: this.href,
+                    cache: false,
+                    success: function (html) { $("#ingredientRow").append(html); }
+                });
+                return false;
+            });
+        </script>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-2">
+                <a class="btn icon-btn btn-success" id="addIngredient"><span class="btn glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add Ingredient</a>
+            </div>
+        </div>
     </div>
 
     <div class="form-horizontal">
@@ -100,6 +118,24 @@
             <div class="col-md-10">
                 @Html.TextAreaFor(model => model.Instruction.Steps, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Instruction.Steps, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="stepsRow">
+
+        </div>
+        <script>
+            $("addSteps").click(function () {
+                $.ajax({
+                    url: this.href,
+                    cache: false,
+                    success: function (html) { $("#stepsRow").append(html); }
+                });
+                return false;
+            });
+        </script>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-2">
+                <a class="btn icon-btn btn-success" id="addSteps"><span class="btn glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add Steps</a>
             </div>
         </div>
     </div>

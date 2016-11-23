@@ -25,8 +25,9 @@ namespace HomeChef
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/style.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/Style.css",
+                      "~/Content/Site.css"));
         }
     }
 }
