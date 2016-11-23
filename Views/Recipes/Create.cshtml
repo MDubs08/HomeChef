@@ -126,6 +126,8 @@
         <script>
             $("addSteps").click(function () {
                 $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
                     url: this.href,
                     cache: false,
                     success: function (html) { $("#stepsRow").append(html); }
@@ -154,7 +156,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Image.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Image.ImageFile, new { type = "file", htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Image.ImageFile, new { type = "file", name="ImageUpload", htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Image.ImageFile, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -428,7 +428,13 @@ h5#recipeDetails{
     padding-top: 40px;
 }
 .col-sm-12#recipeTabBox{
-    position:static;
+    position:static absolute;
+}
+.col-sm-8#customerTestimonials{
+    position: relative;
+}
+.container#customerTestimonials{
+    position: relative;
 }
 .col-sm-12#searchType{
     width: 100%

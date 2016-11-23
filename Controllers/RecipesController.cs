@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeChef.Models;
+using System.IO;
 
 namespace HomeChef.Controllers
 {
@@ -58,15 +59,24 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
+                if (ImageUpload != null && ImageUpload.ContentLength > 0)
+                {
+                    string path = Server.MapPath("~/Content/Pictures/RecipePictures/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    ImageUpload.SaveAs(path + Path.GetFileName(ImageUpload.FileName));
+                    ViewBag.Message = "File uploaded successfully";
+                }
                 db.Recipe.Add(recipe);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.ImageID = new SelectList(db.Image, "ID", "Name", recipe.ImageID);
             ViewBag.IngredientID = new SelectList(db.Ingredient, "ID", "Name", recipe.IngredientID);
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);

@@ -94,10 +94,7 @@
                     @Html.DisplayFor(model => model.Ingredient.Quantity) @Html.DisplayFor(model => model.Ingredient.Measurement) @Html.DisplayFor(model => model.Ingredient.Name)
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Instructions">
-                    @foreach (var step in Model.Instruction.Steps)
-                    {
-                        @Html.DisplayFor(model => model.Instruction.Steps)
-                    }
+                    @Html.DisplayTextFor(model => model.Instruction.Steps)
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Similar">
                     More pictures of similar @Html.DisplayFor(model => model.Name)
@@ -193,12 +190,13 @@
                             <div id="customerTestimonials" class="col-sm-8">
                                 <div class="container" align="center" id="customerTestimonials">
                                     <div class="row">
-                                        <div class='col-md-offset-2 col-md-8 text-center'>
+                                        <div class="col-sm-6">
                                             <h2><strong>Customer Testimonials</strong></h2>
                                         </div>
                                     </div>
+                                    <br />
                                     <div class='row'>
-                                        <div class='col-sm-12'>
+                                        <div class='col-sm-6' align="center">
                                             <div class="carousel slide" data-ride="carousel" id="quote-carousel" data-interval="4000">
                                                 <ol class="carousel-indicators">
                                                     <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
@@ -267,10 +265,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            @Html.RouteLink("Leave a review", "Create", "Reviews", new { id =  Model.ID})
-                            @Html.ActionLink("See all reviews", "Details", "Reviews", new { id = Model.ID })
                         </div>
                     </div>
                 </div>

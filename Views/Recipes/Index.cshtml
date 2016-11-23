@@ -30,7 +30,7 @@
         </ul>
         <form class="navbar-form navbar-default" role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Search" id="searchInput">
             </div>
             <button type="submit" class="btn btn-default" id="searchType" onclick="Search()">Submit</button>
         </form>
@@ -48,6 +48,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="card hovercard">
                     <div class="cardheader">
+                        @Html.DisplayFor(modelItem => item.Image.ImageFile)
                     </div>
                     <div class="info">
                         <div class="title">
@@ -57,7 +58,7 @@
                     </div>
                     <h1 class="rating-num">
                         0
-                        <!--Html.DisplayFor(modelItem => item.Rating)-->
+                        <!--Html.DisplayFor(modelItem => item.Review.Rating.Average)-->
                     </h1>
                     <div class="rating">
                         <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
@@ -65,7 +66,7 @@
                         </span><span class="glyphicon glyphicon-star-empty"></span>
                     </div>
                     <div>
-                        <span class="glyphicon glyphicon-user"></span>1,050,008 total
+                        <span class="glyphicon glyphicon-user"></span>1,050,008 total<!--Html.DisplayFor(modelItem => item.Review.Comment.Count)-->
                     </div>
                 </div>
             </div>
@@ -103,27 +104,27 @@
 </div>
 
 <script>
-    var uri = 'Recipes';
-
-    $(document).ready(function () {
-        $.getJSON(uri)
-            .done(function (data) {
-                $.each(data, function (key, item) {
-                    $('<li>').appendTo($('#Recipes'));
-                });
-            });
-    });
-
     function Search() {
-        var id = $('#searchType').val();
-        $.getJSON(uri + '/' + id)
-            .done(function (data) {
-                $('#searchResults').text(data);
-            })
-            .fail(function (jqXHR, textStatus, err) {
-                $('#searchResults').text('Error: ' + err);
-            });
-    }
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: '',
+            success: function (items) {
+                var searchResult = "";
+                $.each(items.results, function (index, recipe) {
+                    var result = '<div class="col-sm-3"><center>';
+                    result += '';
+                    searchResult += result;
+                });
+                $('#searchResults').html('<div class="container">' + searchResult + '</div>');
+                if(items.resultCount == 0)
+                {
+                    var noResults = "No results availble for " + $('#searchInput').val();
+                    $('#searchResults').html('<div class="col-sm-12"><center><h4>' + noResults + '</h4></center></div>');
+                }
+            }
+        });
+    };
 </script>
 
 <p>
