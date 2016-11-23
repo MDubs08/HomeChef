@@ -27,22 +27,22 @@ namespace HomeChef.Models
 
         [ForeignKey("Ingredient")]
         public int IngredientID { get; set; }
-        public virtual Ingredient Ingredient { get; set; }
+        public Ingredient Ingredient { get; set; }
 
         [ForeignKey("Instruction")]
         public int InstructionID { get; set; }
-        public virtual Instruction Instruction { get; set; }
+        public Instruction Instruction { get; set; }
 
         [ForeignKey("Image")]
         public int ImageID { get; set; }
-        public virtual Image Image { get; set; }
+        public Image Image { get; set; }
 
         [ForeignKey("Video")]
         public int VideoID { get; set; }
-        public virtual Video Video { get; set; }
+        public Video Video { get; set; }
 
         [ForeignKey("Meal")]
         public int MealID { get; set; }
-        public virtual Meal Meal { get; set; }
+        public Meal Meal { get; set; }
     }
 }

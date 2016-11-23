@@ -22,10 +22,11 @@ namespace HomeChef.Controllers
             return View(recipe.ToList());
         }
 
-        public IEnumerable<Recipe> Recipes()
+        // GET: Recipes/Search
+        public ActionResult Search(string search)
         {
-            List<Recipe> recipe = new List<Recipe>();
-            return recipe;
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
+            return Json(recipe, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Recipes/Details/5
