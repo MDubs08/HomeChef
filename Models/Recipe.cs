@@ -20,8 +20,6 @@ namespace HomeChef.Models
         public int ServingSize { get; set; }
         [Display(Name = "Time to Create Recipe")]
         public int LengthToMake { get; set; }
-        [Display (Name = "Recipe Rating")]
-        public int Rating { get; set; }
         [Display(Name = "Favorite Recipe")]
         public bool isFavorite { get; set; }
 
@@ -44,5 +42,9 @@ namespace HomeChef.Models
         [ForeignKey("Meal")]
         public int MealID { get; set; }
         public Meal Meal { get; set; }
+
+        [ForeignKey("RecipeReview")]
+        public int RecipeReviewID { get; set; }
+        public RecipeReview RecipeReview { get; set; }
     }
 }

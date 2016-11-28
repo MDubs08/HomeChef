@@ -20,6 +20,12 @@ namespace HomeChef.Controllers
         {
             return View(db.Image.ToList());
         }
+
+        public ActionResult UploadImage()
+        {
+            var imageUpload = db.Recipe.Include(r => r.Image.ImageFile);
+            return Json(imageUpload, JsonRequestBehavior.AllowGet);
+        }
         
         // GET: Images/Details/5
         public ActionResult Details(int? id)

@@ -17,8 +17,7 @@ namespace HomeChef.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            var review = db.Review.Include(r => r.Recipe);
-            return View(review.ToList());
+            return View();
         }
 
         // GET: Reviews/Details/5
@@ -57,7 +56,6 @@ namespace HomeChef.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RecipeID = new SelectList(db.Recipe, "ID", "Name", review.RecipeID);
             return View(review);
         }
 
@@ -73,7 +71,6 @@ namespace HomeChef.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RecipeID = new SelectList(db.Recipe, "ID", "Name", review.RecipeID);
             return View(review);
         }
 
@@ -90,7 +87,6 @@ namespace HomeChef.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RecipeID = new SelectList(db.Recipe, "ID", "Name", review.RecipeID);
             return View(review);
         }
 

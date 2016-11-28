@@ -12,11 +12,9 @@ namespace HomeChef.Models
         [Key]
 
         public int ID { get; set; }
+        [Display(Name = "Comment")]
         public string Comment { get; set; }
+        [Display(Name = "Rating")]
         public int Rating { get; set; }
-
-        [ForeignKey("Recipe")]
-        public int RecipeID { get; set; }
-        public virtual Recipe Recipe { get; set; }
     }
 }

@@ -20,6 +20,13 @@ namespace HomeChef.Controllers
             return View(db.Ingredient.ToList());
         }
 
+        // GET: Ingredients/Add
+        public ActionResult AddIngredient()
+        {
+            var addIngredient = db.Recipe.Include(r => r.Ingredient);
+            return Json(addIngredient, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Ingredients/Details/5
         public ActionResult Details(int? id)
         {

@@ -218,6 +218,7 @@
     <Compile Include="Controllers\InstructionsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
+    <Compile Include="Controllers\RecipeReviewsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
@@ -241,6 +242,10 @@
     <Compile Include="Migrations\201611221950311_rating system.Designer.cs">
       <DependentUpon>201611221950311_rating system.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611281425267_RatingsReview.cs" />
+    <Compile Include="Migrations\201611281425267_RatingsReview.Designer.cs">
+      <DependentUpon>201611281425267_RatingsReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -252,6 +257,7 @@
     <Compile Include="Models\Instruction.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeReview.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -413,6 +419,11 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\RecipeReviews\Create.cshtml" />
+    <Content Include="Views\RecipeReviews\Delete.cshtml" />
+    <Content Include="Views\RecipeReviews\Details.cshtml" />
+    <Content Include="Views\RecipeReviews\Edit.cshtml" />
+    <Content Include="Views\RecipeReviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -436,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611221950311_rating system.resx">
       <DependentUpon>201611221950311_rating system.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611281425267_RatingsReview.resx">
+      <DependentUpon>201611281425267_RatingsReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

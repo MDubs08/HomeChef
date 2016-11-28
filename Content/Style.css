@@ -469,6 +469,12 @@ h5#recipeDetails{
 .col-lg-3#homeIcons{
     padding: 40px;
 }
+.col-lg-3#homeIcons img {
+    height: 256px;
+    width: 256px;
+    transition: all,ease-in;
+}
+
 .jumbotron-fluid#homeBody {
     padding-top: 40px;
     height: 900px;
@@ -529,14 +535,12 @@ footer {
 .footer-ul li a { 
     color:#a0a3a4; 
     transition: color 0.2s linear 0s, background 0.2s linear 0s; 
-
 }
 .footer-ul i {
      margin-right:10px;
-
 }
 .footer-ul li a:hover {
     transition: color 0.2s linear 0s, background 0.2s linear 0s; 
-    color:#55ACCC; 
-
+    color:#55ACCC;
 }
+

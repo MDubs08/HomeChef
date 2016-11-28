@@ -108,7 +108,7 @@
         $.ajax({
             type: 'GET',
             dataType: 'json',
-            url: '',
+            url: 'http://localhost:63619/Recipes/Search(' + searchConvert($('#searchInput').val()) + ')',
             success: function (items) {
                 var searchResult = "";
                 $.each(items.results, function (index, recipe) {
@@ -124,6 +124,9 @@
                 }
             }
         });
+    };
+    function searchConvert(search){
+        return search.trim().replace(/ /g, "+");
     };
 </script>
 

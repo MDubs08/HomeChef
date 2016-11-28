@@ -18,15 +18,28 @@ namespace HomeChef.Controllers
         // GET: Recipes
         public ActionResult Index()
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video).Include(r => r.RecipeReview);
             return View(recipe.ToList());
         }
 
         // GET: Recipes/Search
         public ActionResult Search(string search)
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video).Include(r => r.RecipeReview);
             return Json(recipe, JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: Recipes/SearchAll
+        public ActionResult SearchAll(string searchString)
+        {
+            var results = from m in db.Recipe
+                          select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                results = results.Where(s => s.Name.Contains(searchString));
+            }
+            return Json(results, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Recipes/Details/5
@@ -52,6 +65,7 @@ namespace HomeChef.Controllers
             Meal meal = new Meal();
             Image image = new Image();
             Video video = new Video();
+            RecipeReview recipeReview = new RecipeReview();
             return View();
         }
 
@@ -60,7 +74,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe, HttpPostedFileBase ImageUpload)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video,recipeReview")] Recipe recipe, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
