@@ -15,6 +15,9 @@ h5#recipeDetails{
 .jumbotron{
     background-color: white;
 }
+.nav.navbar-nav{
+    padding-right: 10px;
+}
 /*Buttons*/
 .btn-fb{
     color: #fff;

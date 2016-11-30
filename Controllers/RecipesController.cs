@@ -32,19 +32,14 @@ namespace HomeChef.Controllers
         // GET: Recipes/SearchAll
         public ActionResult SearchAll(string searchString)
         {
-            var results = from m in db.Recipe
+            var recipes = from m in db.Recipe
                           select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if(!String.IsNullOrEmpty(searchString))
             {
-                results = results.Where(s => s.Name.Contains(searchString));
+                recipes = recipes.Where(s => s.Name.Contains(searchString) || s.Description.Contains(searchString) || s.Meal.MealTime.ToString().Contains(searchString) || s.Meal.MealType.ToString().Contains(searchString) || s.Meal.HolidayMeal.ToString().Contains(searchString) || s.Ingredient.Name.Contains(searchString));
             }
-            return Json(results, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult AddSteps(string addSteps)
-        {
-            return db.Recipe.Include(r => r.Instruction.Steps.Add());
+            return View(recipes);
         }
 
         // GET: Recipes/Details/5
