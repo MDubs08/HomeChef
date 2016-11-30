@@ -10,6 +10,7 @@ using HomeChef.Models;
 
 namespace HomeChef.Controllers
 {
+    [Authorize]
     public class CartItemsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

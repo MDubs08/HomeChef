@@ -34,7 +34,7 @@ namespace HomeChef.Controllers
             }
             return View(review);
         }
-
+        [Authorize]
         // GET: Reviews/Create
         public ActionResult Create()
         {
@@ -91,6 +91,7 @@ namespace HomeChef.Controllers
         }
 
         // GET: Reviews/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

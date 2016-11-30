@@ -544,3 +544,11 @@ footer {
     color:#55ACCC;
 }
 
+/*Home Animation*/
+
+.scene {
+	position: absolute;
+	width: 100%;
+	transform: translateY(var(--translateY));
+	will-change: transform;
+}

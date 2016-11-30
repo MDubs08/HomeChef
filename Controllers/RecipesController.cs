@@ -58,6 +58,7 @@ namespace HomeChef.Controllers
         }
 
         // GET: Recipes/Create
+        [Authorize]
         public ActionResult Create()
         {
             List<Ingredient> ingredient = new List<Ingredient>();
@@ -101,6 +102,7 @@ namespace HomeChef.Controllers
         }
 
         // GET: Recipes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -142,6 +144,7 @@ namespace HomeChef.Controllers
         }
 
         // GET: Recipes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
