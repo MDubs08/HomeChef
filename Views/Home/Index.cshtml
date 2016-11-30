@@ -1,95 +1,67 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-        <div class="overlay"></div>
-        <ol class="carousel-indicators">
-            <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#bs-carousel" data-slide-to="1"></li>
-            <li data-target="#bs-carousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item slides active">
-                <div class="slide-1"></div>
-                <div class="hero">
-                    <hgroup>
-                        <h1>Be creative</h1>
-                        <h3>Your recipes, your home</h3>
-                    </hgroup>
-                    <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Your Recipes", "Index", "Recipes")</button>
-                </div>
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+    <div class="overlay"></div>
+    <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item slides active">
+            <div class="slide-1"></div>
+            <div class="hero">
+                <hgroup>
+                    <h1>Be creative</h1>
+                    <h3>Your recipes, your home</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Your Recipes", "Index", "Recipes")</button>
             </div>
-            <div class="item slides">
-                <div class="slide-2"></div>
-                <div class="hero">
-                    <hgroup>
-                        <h1>Easy Bake</h1>
-                        <h3>Search by how you feel</h3>
-                    </hgroup>
-                    <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Search Recipes", "Index", "Recipes")</button>
-                </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-2"></div>
+            <div class="hero">
+                <hgroup>
+                    <h1>Easy Bake</h1>
+                    <h3>Search by how you feel</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Search Recipes", "Index", "Recipes")</button>
             </div>
-            <div class="item slides">
-                <div class="slide-3"></div>
-                <div class="hero">
-                    <hgroup>
-                        <h1>Personal Chef</h1>
-                        <h3>Step by step voice instructions</h3>
-                    </hgroup>
-                    <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Instructions", "Index", "Recipes")</button>
-                </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-3"></div>
+            <div class="hero">
+                <hgroup>
+                    <h1>Personal Chef</h1>
+                    <h3>Step by step voice instructions</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">@Html.ActionLink("Instructions", "Index", "Recipes")</button>
             </div>
         </div>
     </div>
-    <div id="iconDisplay" class="jumbotron-fluid">
-        <div class="row">
-            <div id="homeIcons" class="col-lg-3">
-                <h4 align="center">Icon Title</h4>
-                <center><img src="~/Content/Pictures/OtherIcons/ChefIcon.png" /></center>
-                <p align="center">Icon Information</p>
-            </div>
-            <div id="homeIcons" class="col-lg-3">
-                <h4 align="center">Icon Title</h4>
-                <center><img src="~/Content/Pictures/OtherIcons/CookbookIcon.png" /></center>
-                <p align="center">Icon Information</p>
-            </div>
-            <div id="homeIcons" class="col-lg-3">
-                <h4 align="center">Icon Title</h4>
-                <center><img src="~/Content/Pictures/OtherIcons/CookingIcon.png" /></center>
-                <p align="center">Icon Information</p>
-            </div>
-            <div id="homeIcons" class="col-lg-3">
-                <h4 align="center">Icon Title</h4>
-                <center><img src="~/Content/Pictures/OtherIcons/ShoppingCartIcon.png" /></center>
-                <p align="center">Icon Information</p>
-            </div>
+</div>
+<div id="iconDisplay" class="jumbotron-fluid">
+    <div class="row">
+        <div id="homeIcons" class="col-lg-3">
+            <h4 align="center">Icon Title</h4>
+            <center><img src="~/Content/Pictures/OtherIcons/ChefIcon.png" /></center>
+            <p align="center">Icon Information</p>
+        </div>
+        <div id="homeIcons" class="col-lg-3">
+            <h4 align="center">Icon Title</h4>
+            <center><img src="~/Content/Pictures/OtherIcons/CookbookIcon.png" /></center>
+            <p align="center">Icon Information</p>
+        </div>
+        <div id="homeIcons" class="col-lg-3">
+            <h4 align="center">Icon Title</h4>
+            <center><img src="~/Content/Pictures/OtherIcons/CookingIcon.png" /></center>
+            <p align="center">Icon Information</p>
+        </div>
+        <div id="homeIcons" class="col-lg-3">
+            <h4 align="center">Icon Title</h4>
+            <center><img src="~/Content/Pictures/OtherIcons/ShoppingCartIcon.png" /></center>
+            <p align="center">Icon Information</p>
         </div>
     </div>
-    <img class="scene" data-modifier="30" src="https://parallaxbilder-qmogbogaoz.now.sh/p0.png">
-    <img class="scene" data-modifier="18" src="https://parallaxbilder-qmogbogaoz.now.sh/p1.png">
-    <img class="scene" data-modifier="12" src="https://parallaxbilder-qmogbogaoz.now.sh/p2.png">
-    <img class="scene" data-modifier="8" src="https://parallaxbilder-qmogbogaoz.now.sh/p3.png">
-    <img class="scene" data-modifier="6" src="https://parallaxbilder-qmogbogaoz.now.sh/p4.png">
-    <img class="scene" data-modifier="0" src="https://parallaxbilder-qmogbogaoz.now.sh/p6.png">
-    <script>
-        const scenes = document.querySelectorAll('.scene')
-
-        Array.prototype.forEach.call(scenes, (elem) => {
-
-            const modifier = elem.getAttribute('data-modifier')
-
-            basicScroll.create({
-                elem: elem,
-                from: 0,
-                to: 519,
-                props: {
-                    '--translateY': {
-                        from: '0',
-                        to: `${10 * modifier}px`,
-                        direct: true
-                    }
-                }
-            }).start()
-
-        })
-    </script>
+</div>

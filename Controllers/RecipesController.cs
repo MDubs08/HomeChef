@@ -42,6 +42,11 @@ namespace HomeChef.Controllers
             return Json(results, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult AddSteps(string addSteps)
+        {
+            return db.Recipe.Include(r => r.Instruction.Steps.Add());
+        }
+
         // GET: Recipes/Details/5
         public ActionResult Details(int? id)
         {
@@ -98,6 +103,7 @@ namespace HomeChef.Controllers
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);
             ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime", recipe.MealID);
             ViewBag.VideoID = new SelectList(db.Video, "ID", "Name", recipe.VideoID);
+            ViewBag.RecipeReviewID = new SelectList(db.RecipeReview, "ID", "AverageRating", recipe.RecipeReviewID);
             return View(recipe);
         }
 
