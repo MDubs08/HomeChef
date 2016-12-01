@@ -39,7 +39,7 @@ namespace HomeChef.Controllers
         // GET: RecipeReviews/Create
         public ActionResult Create()
         {
-            ViewBag.ReviewID = new SelectList(db.Review, "ID", "Comment");
+            Review review = new Review();
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,AverageRating,ReviewID")] RecipeReview recipeReview)
+        public ActionResult Create([Bind(Include = "ID,AverageRating,review")] RecipeReview recipeReview)
         {
             if (ModelState.IsValid)
             {

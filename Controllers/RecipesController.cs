@@ -18,14 +18,14 @@ namespace HomeChef.Controllers
         // GET: Recipes
         public ActionResult Index()
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video).Include(r => r.RecipeReview);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
             return View(recipe.ToList());
         }
 
         // GET: Recipes/Search
         public ActionResult Search(string search)
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video).Include(r => r.RecipeReview);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
             return Json(recipe, JsonRequestBehavior.AllowGet);
         }
 
@@ -66,7 +66,6 @@ namespace HomeChef.Controllers
             Meal meal = new Meal();
             Image image = new Image();
             Video video = new Video();
-            RecipeReview recipeReview = new RecipeReview();
             return View();
         }
 
@@ -75,7 +74,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video,recipeReview")] Recipe recipe, HttpPostedFileBase ImageUpload)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +97,6 @@ namespace HomeChef.Controllers
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);
             ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime", recipe.MealID);
             ViewBag.VideoID = new SelectList(db.Video, "ID", "Name", recipe.VideoID);
-            ViewBag.RecipeReviewID = new SelectList(db.RecipeReview, "ID", "AverageRating", recipe.RecipeReviewID);
             return View(recipe);
         }
 

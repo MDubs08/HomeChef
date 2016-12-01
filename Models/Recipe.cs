@@ -42,9 +42,5 @@ namespace HomeChef.Models
         [ForeignKey("Meal")]
         public int MealID { get; set; }
         public Meal Meal { get; set; }
-
-        [ForeignKey("RecipeReview")]
-        public int RecipeReviewID { get; set; }
-        public RecipeReview RecipeReview { get; set; }
     }
 }

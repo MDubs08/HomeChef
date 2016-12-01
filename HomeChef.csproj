@@ -226,25 +226,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611161554147_InitialCreate.cs" />
-    <Compile Include="Migrations\201611161554147_InitialCreate.Designer.cs">
-      <DependentUpon>201611161554147_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201611302331220_initialMigration.cs" />
+    <Compile Include="Migrations\201611302331220_initialMigration.Designer.cs">
+      <DependentUpon>201611302331220_initialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611180011267_update 2.cs" />
-    <Compile Include="Migrations\201611180011267_update 2.Designer.cs">
-      <DependentUpon>201611180011267_update 2.cs</DependentUpon>
+    <Compile Include="Migrations\201611302343088_nullable.cs" />
+    <Compile Include="Migrations\201611302343088_nullable.Designer.cs">
+      <DependentUpon>201611302343088_nullable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611212354470_list to enum.cs" />
-    <Compile Include="Migrations\201611212354470_list to enum.Designer.cs">
-      <DependentUpon>201611212354470_list to enum.cs</DependentUpon>
+    <Compile Include="Migrations\201611302352292_review.cs" />
+    <Compile Include="Migrations\201611302352292_review.Designer.cs">
+      <DependentUpon>201611302352292_review.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611221950311_rating system.cs" />
-    <Compile Include="Migrations\201611221950311_rating system.Designer.cs">
-      <DependentUpon>201611221950311_rating system.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611281425267_RatingsReview.cs" />
-    <Compile Include="Migrations\201611281425267_RatingsReview.Designer.cs">
-      <DependentUpon>201611281425267_RatingsReview.cs</DependentUpon>
+    <Compile Include="Migrations\201612010002059_no reviews.cs" />
+    <Compile Include="Migrations\201612010002059_no reviews.Designer.cs">
+      <DependentUpon>201612010002059_no reviews.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -436,20 +432,17 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611161554147_InitialCreate.resx">
-      <DependentUpon>201611161554147_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611302331220_initialMigration.resx">
+      <DependentUpon>201611302331220_initialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611180011267_update 2.resx">
-      <DependentUpon>201611180011267_update 2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611302343088_nullable.resx">
+      <DependentUpon>201611302343088_nullable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611212354470_list to enum.resx">
-      <DependentUpon>201611212354470_list to enum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611302352292_review.resx">
+      <DependentUpon>201611302352292_review.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611221950311_rating system.resx">
-      <DependentUpon>201611221950311_rating system.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611281425267_RatingsReview.resx">
-      <DependentUpon>201611281425267_RatingsReview.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612010002059_no reviews.resx">
+      <DependentUpon>201612010002059_no reviews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

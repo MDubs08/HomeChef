@@ -1,4 +1,3 @@
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.WindowsAzure.Storage.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\roslyn\csc.exe
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\roslyn\csc.exe.config
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\roslyn\csc.rsp
@@ -50,6 +49,7 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.OAu
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.WindowsAzure.Storage.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Newtonsoft.Json.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Owin.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\System.Net.Http.Formatting.dll
@@ -135,12 +135,10 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\ko\System.Spatial.resources
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\ru\System.Spatial.resources.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.InitialCreate.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.update2.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.listtoenum.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.ratingsystem.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csproj.GenerateResource.Cache
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.dll
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.pdb
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.RatingsReview.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.initialMigration.resources
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csproj.GenerateResource.Cache
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.nullable.resources
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.review.resources
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.noreviews.resources
