@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201612010002059_no reviews.Designer.cs">
       <DependentUpon>201612010002059_no reviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612020446459_steps.cs" />
+    <Compile Include="Migrations\201612020446459_steps.Designer.cs">
+      <DependentUpon>201612020446459_steps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -271,9 +275,13 @@
     <Content Include="Content\Pictures\CookingCarousel1.jpg" />
     <Content Include="Content\Pictures\CookingCarousel2.jpg" />
     <Content Include="Content\Pictures\cookingHome1.jpg" />
+    <Content Include="Content\Pictures\CustomerTestimonial\BillMurray.jpeg" />
+    <Content Include="Content\Pictures\CustomerTestimonial\DonaldTrump.jpg" />
+    <Content Include="Content\Pictures\CustomerTestimonial\ElonMusk.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\Harambe.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\JessicaAlba.png" />
     <Content Include="Content\Pictures\CustomerTestimonial\JohnCena.jpg" />
+    <Content Include="Content\Pictures\CustomerTestimonial\Kanye West.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\KenBone.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
     <Content Include="Content\Pictures\MenuPictures\Appetizer.jpg" />
@@ -443,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612010002059_no reviews.resx">
       <DependentUpon>201612010002059_no reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612020446459_steps.resx">
+      <DependentUpon>201612020446459_steps.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

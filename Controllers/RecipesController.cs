@@ -61,7 +61,7 @@ namespace HomeChef.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            List<Ingredient> ingredient = new List<Ingredient>();
+            Ingredient ingredient = new Ingredient();
             Instruction instruction = new Instruction();
             Meal meal = new Meal();
             Image image = new Image();
