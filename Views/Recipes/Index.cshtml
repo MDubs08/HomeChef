@@ -65,12 +65,12 @@
                         <!--Html.DisplayFor(modelItem => item.Review.Rating.Average)-->
                     </h1>
                     <div class="rating">
-                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                        </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                        <span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty">
+                        </span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty">
                         </span><span class="glyphicon glyphicon-star-empty"></span>
                     </div>
                     <div>
-                        <span class="glyphicon glyphicon-user"></span>1,050,008 total<!--Html.DisplayFor(modelItem => item.Review.Comment.Count)-->
+                        <span class="glyphicon glyphicon-user"></span>0 total<!--Html.DisplayFor(modelItem => item.Review.Comment.Count)-->
                     </div>
                 </div>
             </div>
@@ -133,84 +133,3 @@
         return search.trim().replace(/ /g, "+");
     };
 </script>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Image.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredient.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instruction.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Meal.MealTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Video.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ServingSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LengthToMake)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isFavorite)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ingredient.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instruction.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Meal.MealTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Video.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServingSize)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LengthToMake)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.isFavorite)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
-
-</table>

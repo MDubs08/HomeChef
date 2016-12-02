@@ -275,6 +275,7 @@
     <Content Include="Content\Pictures\CookingCarousel1.jpg" />
     <Content Include="Content\Pictures\CookingCarousel2.jpg" />
     <Content Include="Content\Pictures\cookingHome1.jpg" />
+    <Content Include="Content\Pictures\CookingTwo.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\BillMurray.jpeg" />
     <Content Include="Content\Pictures\CustomerTestimonial\DonaldTrump.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\ElonMusk.jpg" />
@@ -283,6 +284,7 @@
     <Content Include="Content\Pictures\CustomerTestimonial\JohnCena.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\Kanye West.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\KenBone.jpg" />
+    <Content Include="Content\Pictures\FamilyCooking.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
     <Content Include="Content\Pictures\MenuPictures\Appetizer.jpg" />
     <Content Include="Content\Pictures\MenuPictures\Breakfast.jpg" />
