@@ -457,6 +457,9 @@ h5#recipeDetails{
     border-radius: 3px;
     position: relative;
 }
+.desc{
+    height:40px;
+}
 
 /*Ratings Card*/
 .row#ratingLine{

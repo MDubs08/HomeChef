@@ -16,10 +16,17 @@ namespace HomeChef.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Recipes
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
+            var recipes = from m in db.Recipe
+                          select m;
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.Ingredient.Name.Contains(search));
+            }
             var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
-            return View(recipe.ToList());
+            return View(recipes);
         }
 
         // GET: Recipes/Search
