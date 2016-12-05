@@ -23,7 +23,7 @@ namespace HomeChef.Controllers
         // GET: Ingredients/Add
         public ActionResult AddIngredient()
         {
-            var addIngredient = db.Recipe.Include(r => r.Ingredient);
+            var addIngredient = db.Recipe.Include(r => r.RecipeIngredient.Ingredient);
             return Json(addIngredient, JsonRequestBehavior.AllowGet);
         }
 

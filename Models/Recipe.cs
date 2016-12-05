@@ -23,9 +23,9 @@ namespace HomeChef.Models
         [Display(Name = "Favorite Recipe")]
         public bool isFavorite { get; set; }
 
-        [ForeignKey("Ingredient")]
-        public int IngredientID { get; set; }
-        public Ingredient Ingredient { get; set; }
+        [ForeignKey("RecipeIngredient")]
+        public int RecipeIngredientID { get; set; }
+        public RecipeIngredient RecipeIngredient { get; set; }
 
         [ForeignKey("Instruction")]
         public int InstructionID { get; set; }

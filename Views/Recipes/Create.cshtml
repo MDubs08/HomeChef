@@ -52,26 +52,26 @@
         <h3>Ingredients</h3>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.Ingredient.Quantity, "Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RecipeIngredient.Ingredient.Quantity, "Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ingredient.Quantity, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ingredient.Quantity, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RecipeIngredient.Ingredient.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RecipeIngredient.Ingredient.Quantity, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Ingredient.Measurement, "Measurement", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RecipeIngredient.Ingredient.Measurement, "Measurement", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Ingredient.Measurement, null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Ingredient.Quantity, "", new { @class = "text-danger" })
+                @Html.EnumDropDownListFor(model => model.RecipeIngredient.Ingredient.Measurement, null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RecipeIngredient.Ingredient.Quantity, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Ingredient.Name, "Ingredient", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RecipeIngredient.Ingredient.Name, "Ingredient", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ingredient.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ingredient.Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RecipeIngredient.Ingredient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RecipeIngredient.Ingredient.Name, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group" id="ingredientRow">
@@ -89,7 +89,7 @@
         </script>
         <div class="row">
             <div class="col-md-offset-2 col-md-2">
-                <a class="btn icon-btn btn-success" id="addIngredient"><span class="btn glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add Ingredient</a>
+                <a class="btn icon-btn btn-success" id="AddIngredient" name="AddIngredient" onclick="AddIngredient()"><span class="btn glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add Ingredient</a>
             </div>
         </div>
     </div>
@@ -114,10 +114,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Instruction.Steps, "Steps", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Instruction.Step.Steps, "Steps", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Instruction.Steps, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Instruction.Steps, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.Instruction.Step.Steps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Instruction.Step.Steps, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group" id="stepsRow">
@@ -160,69 +160,156 @@
                 @Html.ValidationMessageFor(model => model.Image.ImageFile, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
-
-        <div class="form-horizontal">
-            <h3>Videos</h3>
-            <hr />
-            <div class="form-group">
-                @Html.LabelFor(model => model.Video.Name, "Video Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Video.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Video.Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Video.VideoFile, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.Video.VideoFile, new { type = "file", htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Video.VideoFile, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" class="btn btn-default" />
             </div>
         </div>
 
-        <div class="form-horizontal">
-            <h3>Categories</h3>
-            <hr />
-            <div class="form-group">
-                @Html.LabelFor(model => model.Meal.MealTime, "Meal Time Frame", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.Meal.MealTime, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Meal.MealTime, "", new { @class = "text-danger" })
-                </div>
-            </div>
+        <ol>
+            <li class="liImage">
+                <input type="file" id="imageToUpload" name="ImageUpload" />
+                <span class="field-validation-error" id="spanImage"></span>
+            </li>
+        </ol>
+        <input type="submit" id="ImageUploadButton" value="Upload" />
+        <script type="text/javascript">
+            function GetFileSize(imageid) {
+                try{
+                    var fileSize = 0;
+                    if ($.browser.msie){
+                        var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+                        var imagePath = $("#" + imageid)[0].value;
+                        var objImage = objFSO.getFile(imagePath);
+                        var imageSize = objImage.size;
+                        imageSize = imageSize / 1048576;
+                    }
+                    return fileSize;
+                }
+                catch (e) {
+                    alert("Error is:" + e);
+                }
+            }
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Meal.MealType, "Meal Type", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.Meal.MealType, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Meal.MealType, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            function getNameFromPath(strFilepath) {
+                var objRE = new RegExp(/([^\/\\]+)$/);
+                var strName = objRE.exec(strFilepath);
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Meal.isHoliday, "Holiday Meal", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(model => model.Meal.isHoliday, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Meal.isHoliday, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                if (strName == null) {
+                    return null;
+                } else {
+                    return strName[0];
+                }
+            }
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Meal.HolidayMeal, "Holiday Type", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.Meal.HolidayMeal, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Meal.HolidayMeal, "", new { @class = "text-danger" })
-                </div>
+            $("#ImageUploadButton").live("click", function () {
+                if ($('#imageToUpload').val() == "") {
+                    $("#spanImage").html("Please Upload File");
+                    return false;
+                } else {
+                    return checkImage();
+                }
+            });
+
+            function checkImage() {
+                var image = getNameFromPath($("#imageToUpload").val());
+                if (image != null) {
+                    var extension = file.substr((file.lastIndexOf('.') + 1));
+                    switch (extension) {
+                        case 'jpg':
+                        case 'png':
+                        case 'jpeg':
+                        case 'pdf':
+                            flag = true;
+                            break;
+                        default:
+                            flag = false;
+                    }
+                }
+                if (flag == false) {
+                    $("#spanImage").text("You can upload only jpg, png, jpeg, pdf extension file");
+                    return false;
+                } else {
+                    var size = GetFileSize('imageToUpload');
+                    if (size > 3) {
+                        $("#spanImage").text("You can upload fild up to 3 MB");
+                        return false;
+                    } else {
+                        $("#spanImage").text("");
+                    }
+                }
+            }
+
+            $(function () {
+                $("#imageToUpload").change(function () {
+                    checkImage();
+                });
+            });
+        </script>
+        
+    </div>
+
+    <div class="form-horizontal">
+        <h3>Videos</h3>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Video.Name, "Video Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Video.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Video.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            @Html.LabelFor(model => model.Video.VideoFile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Video.VideoFile, new { type = "file", htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Video.VideoFile, "", new { @class = "text-danger" })
             </div>
         </div>
+    </div>
+
+    <div class="form-horizontal">
+        <h3>Categories</h3>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.MealTime, "Meal Time Frame", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Meal.MealTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.MealTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.MealType, "Meal Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Meal.MealType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.MealType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.isHoliday, "Holiday Meal", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Meal.isHoliday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.isHoliday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Meal.HolidayMeal, "Holiday Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Meal.HolidayMeal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Meal.HolidayMeal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
 }
 
 <div>

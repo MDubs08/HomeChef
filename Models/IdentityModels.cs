@@ -39,5 +39,7 @@ namespace HomeChef.Models
         public DbSet<CartItem> CartItem { get; set; }
         public DbSet<Review> Review { get; set; }
         public DbSet<RecipeReview> RecipeReview { get; set; }
+        public DbSet<RecipeIngredient> RecipeIngredient { get; set; }
+        public DbSet<Step> Step { get; set; }
     }
 }

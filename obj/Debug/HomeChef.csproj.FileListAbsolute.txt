@@ -143,4 +143,9 @@ C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.n
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.review.resources
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.noreviews.resources
 C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.steps.resources
-C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.csprojResolveAssemblyReference.cache
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\Microsoft.Web.Helpers.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\WebMatrix.Data.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\WebMatrix.WebData.dll
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\WebMatrix.WebData.xml
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\bin\WebMatrix.Data.xml
+C:\Users\MDubs\Desktop\DevCode\CapStone\HomeChef\obj\Debug\HomeChef.Migrations.StepsRecipeIngredient.resources

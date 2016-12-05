@@ -17,7 +17,8 @@ namespace HomeChef.Controllers
         // GET: Instructions
         public ActionResult Index()
         {
-            return View(db.Instruction.ToList());
+            var instruction = db.Instruction.Include(r => r.Step);
+            return View(instruction);
         }
 
         // GET: Instructions/Details/5
@@ -38,6 +39,7 @@ namespace HomeChef.Controllers
         // GET: Instructions/Create
         public ActionResult Create()
         {
+            Step step = new Step();
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,PrepTime")] Instruction instruction)
+        public ActionResult Create([Bind(Include = "ID,Name,PrepTime,step")] Instruction instruction)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +80,7 @@ namespace HomeChef.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,PrepTime")] Instruction instruction)
+        public ActionResult Edit([Bind(Include = "ID,Name,PrepTime,step")] Instruction instruction)
         {
             if (ModelState.IsValid)
             {

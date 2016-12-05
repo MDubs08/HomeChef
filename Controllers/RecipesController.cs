@@ -23,30 +23,17 @@ namespace HomeChef.Controllers
 
             if (!String.IsNullOrEmpty(search))
             {
-                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.Ingredient.Name.Contains(search));
+                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.RecipeIngredient.Ingredient.Name.Contains(search));
             }
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.RecipeIngredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
             return View(recipes);
         }
 
         // GET: Recipes/Search
         public ActionResult Search(string search)
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.Ingredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.RecipeIngredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
             return Json(recipe, JsonRequestBehavior.AllowGet);
-        }
-
-        // GET: Recipes/SearchAll
-        public ActionResult SearchAll(string searchString)
-        {
-            var recipes = from m in db.Recipe
-                          select m;
-
-            if(!String.IsNullOrEmpty(searchString))
-            {
-                recipes = recipes.Where(s => s.Name.Contains(searchString) || s.Description.Contains(searchString) || s.Meal.MealTime.ToString().Contains(searchString) || s.Meal.MealType.ToString().Contains(searchString) || s.Meal.HolidayMeal.ToString().Contains(searchString) || s.Ingredient.Name.Contains(searchString));
-            }
-            return View(recipes);
         }
 
         // GET: Recipes/Details/5
@@ -68,7 +55,7 @@ namespace HomeChef.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            Ingredient ingredient = new Ingredient();
+            RecipeIngredient recipeIngredient = new RecipeIngredient();
             Instruction instruction = new Instruction();
             Meal meal = new Meal();
             Image image = new Image();
@@ -76,31 +63,60 @@ namespace HomeChef.Controllers
             return View();
         }
 
+        public ActionResult ImageUpload(HttpPostedFileBase ImageUpload)
+        {
+            if (ImageUpload.ContentLength > 0)
+            {
+                int MaxContentLength = 1024 * 1024 * 3;
+                string[] AllowedFileExtensions = new string[] { ".jpg", ".png", ".jpeg", "pdf" };
+                if (!AllowedFileExtensions.Contains(ImageUpload.FileName.Substring(ImageUpload.FileName.LastIndexOf('.'))))
+                {
+                    ModelState.AddModelError("Image", "Please file of type: " + string.Join(", ", AllowedFileExtensions));
+                }
+                else if (ImageUpload.ContentLength > MaxContentLength)
+                {
+                    ModelState.AddModelError("ImageUpload", "Your fild is too large, maximum allowed size is: " + MaxContentLength + " MB");
+                }
+                else
+                {
+                    var imageName = Path.GetFileName(ImageUpload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Pictures/RecipePictures"), imageName);
+                    ImageUpload.SaveAs(path);
+                    ModelState.Clear();
+                    ViewBag.Message = "File uploaded successfully";
+                }
+
+            }
+            return View();
+        }
+
+        public ActionResult AddIngredient()
+        {
+            RecipeIngredient RecipeIngredient = new RecipeIngredient();
+            return View(RecipeIngredient);
+        }
+
+        public ActionResult AddStep()
+        {
+            Step Step = new Step();
+            return View(Step);
+        }
+
         // POST: Recipes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,ingredient,instruction,meal,image,video")] Recipe recipe, HttpPostedFileBase ImageUpload)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ServingSize,LengthToMake,Rating,isFavorite,recipeIngredient,instruction,meal,image,video")] Recipe recipe, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
-                if (ImageUpload != null && ImageUpload.ContentLength > 0)
-                {
-                    string path = Server.MapPath("~/Content/Pictures/RecipePictures/");
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    ImageUpload.SaveAs(path + Path.GetFileName(ImageUpload.FileName));
-                    ViewBag.Message = "File uploaded successfully";
-                }
                 db.Recipe.Add(recipe);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.ImageID = new SelectList(db.Image, "ID", "Name", recipe.ImageID);
-            ViewBag.IngredientID = new SelectList(db.Ingredient, "ID", "Name", recipe.IngredientID);
+            ViewBag.RecipeIngredientID = new SelectList(db.RecipeIngredient, "ID", "Name", recipe.RecipeIngredientID);
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);
             ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime", recipe.MealID);
             ViewBag.VideoID = new SelectList(db.Video, "ID", "Name", recipe.VideoID);
@@ -121,7 +137,7 @@ namespace HomeChef.Controllers
                 return HttpNotFound();
             }
             ViewBag.ImageID = new SelectList(db.Image, "ID", "Name", recipe.ImageID);
-            ViewBag.IngredientID = new SelectList(db.Ingredient, "ID", "Name", recipe.IngredientID);
+            ViewBag.RecipeIngredientID = new SelectList(db.RecipeIngredient, "ID", "Name", recipe.RecipeIngredientID);
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);
             ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime", recipe.MealID);
             ViewBag.VideoID = new SelectList(db.Video, "ID", "Name", recipe.VideoID);
@@ -142,7 +158,7 @@ namespace HomeChef.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ImageID = new SelectList(db.Image, "ID", "Name", recipe.ImageID);
-            ViewBag.IngredientID = new SelectList(db.Ingredient, "ID", "Name", recipe.IngredientID);
+            ViewBag.RecipeIngredientID = new SelectList(db.RecipeIngredient, "ID", "Name", recipe.RecipeIngredientID);
             ViewBag.InstructionID = new SelectList(db.Instruction, "ID", "Name", recipe.InstructionID);
             ViewBag.MealID = new SelectList(db.Meal, "ID", "MealTime", recipe.MealID);
             ViewBag.VideoID = new SelectList(db.Video, "ID", "Name", recipe.VideoID);
