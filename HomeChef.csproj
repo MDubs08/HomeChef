@@ -289,6 +289,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Pictures\AdRevenue\Construction_of_New_Clinical_Tower_at_Shaukat_Khanum_Hospital_Lahore.gif" />
+    <Content Include="Content\Pictures\AmazonAlexaDevices.png" />
+    <Content Include="Content\Pictures\AmazonEcho.png" />
     <Content Include="Content\Pictures\categoriesHeader.jpg" />
     <Content Include="Content\Pictures\chef-512.png" />
     <Content Include="Content\Pictures\CookingCarousel0.jpg" />
@@ -333,6 +335,7 @@
     <Content Include="Content\Pictures\SocialMediaIcons\Pinterest-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Reddit-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Twitter-icon-32.png" />
+    <Content Include="Content\Pictures\Talking Person.png" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

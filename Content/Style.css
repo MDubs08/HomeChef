@@ -1,5 +1,11 @@
 ﻿body{
     background-color:white;
+    width: auto;
+}
+
+.body-content{
+    padding-left: 0px;
+    padding-right: 0px;
 }
 h2#userRating{
     padding: 0px;
@@ -64,6 +70,15 @@ h5#recipeDetails{
     border-color: #2F4550;
     outline: none;
     margin: 20px auto;
+}
+
+.btn-circle{
+    width: 30px;
+    height: 30px;
+    padding: 4px 6px;
+    font-size: 12px;
+    line-height: 1.33;
+    border-radius: 25px;
 }
 .btn-glyphicon { 
     padding:1px; background:#ffffff; margin-right:4px;
@@ -225,6 +240,76 @@ h5#recipeDetails{
     color: #fff;
     padding-top: 50px;
     text-align: center;
+}
+
+/*Parallax*/
+section.module:last-child {
+  margin-bottom: 0;
+}
+
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+section.module p:last-child {
+  margin-bottom: 0;
+}
+
+section.module.content {
+  padding: 40px 0;
+}
+
+section.module.parallax {
+  height: 1000px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  font-weight: 700;
+  padding-top: 300px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+section.module.parallax-1 {
+    background-image: url('Pictures/FamilyCooking.jpg');
+}
+
+section.module.parallax-2 {
+    background-image: url('Pictures/CookingTwo.jpg');
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 90px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 120px;
+  }
 }
 
 /*Recipe Cards*/
@@ -476,8 +561,8 @@ h5#recipeDetails{
     padding: 40px;
 }
 .col-lg-3#homeIcons img {
-    height: 256px;
-    width: 256px;
+    height: 128px;
+    width: 128px;
     transition: all,ease-in;
 }
 
@@ -490,6 +575,170 @@ h5#recipeDetails{
     background-repeat:no-repeat;
     background-size:cover;
 }
+
+.example-section {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #ffffff;
+    z-index: 1000;
+    font-size: 10px;
+    -moz-animation: fadeInBack 3s linear 20s backwards;
+    -o-animation: fadeInBack 3s linear 20s backwards;
+    -webkit-animation: fadeInBack 3s linear 20s backwards;
+    animation: fadeInBack 3s linear 20s backwards;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.example-section:after{
+    top:100%;
+    left: 50px;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-top-color: #ffffff;
+    border-width: 15px;
+    margin-left: -15px;
+}
+
+.example-section p{
+    -o-animation: ease-in-out 3s ease-in backwards;
+    -webkit-animation: ease-in-out 3s ease-in backwards;
+    -moz-animation: ease-in-out 3s ease-in backwards;
+    animation: ease-in-out 3s ease-in backwards;
+}
+
+.example-section p.user-frame-1{
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.example-section p.user-frame-2{
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+.example-section p.user-frame-3{
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+    -o-animation-delay: 8s;
+    animation-delay: 8s;
+}
+
+.example-section p.user-frame-4{
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    animation-delay: 12s;
+}
+
+.example-section p.user-frame-5{
+    -webkit-animation-delay: 16s;
+    -moz-animation-delay: 16s;
+    -o-animation-delay: 16s;
+    animation-delay: 16s;
+}
+
+.example-section p.alexa-frame-1{
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay:1s;
+}
+
+.example-section p.alexa-frame-2{
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    -o-animation-delay: 5s;
+    animation-delay: 5s;
+}
+
+.example-section p.alexa-frame-3{
+    -webkit-animation-delay: 9s;
+    -moz-animation-delay: 9s;
+    -o-animation-delay: 9s;
+    animation-delay: 9s;
+}
+
+.example-section p.alexa-frame-4{
+    -webkit-animation-delay: 13s;
+    -moz-animation-delay: 13s;
+    -o-animation-delay: 13s;
+    animation-delay: 13s;
+}
+
+.example-section p.alexa-frame-5{
+    -webkit-animation-delay: 17s;
+    -moz-animation-delay: 17s;
+    -o-animation-delay: 17s;
+    animation-delay: 17s;
+}
+
+.alexa.user-speak .example-section{
+    border-color: #777777
+}
+
+.alexa.user-speak .example-section:after{
+    border-top-color: #777777;
+}
+
+.alexa.alexa-speak .example-section{
+    border-color: #777777;
+}
+
+.alexa.alexa-speak .example-section:after{
+    border-top-color: #777777;
+}
+
+.user-portfolio{
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.user-portfolio img{
+    border: 1px solid #f5f5f5;
+    border-radius: 150px;
+    height: 70px;
+    padding: 3px;
+    width: 70px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user-name{
+    font-weight: bold;
+}
+
+.alexa-portfolio{
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.alexa-portfolio img{
+    border: 1px solid #f5f5f5;
+    border-radius: 150px;
+    height: 70px;
+    padding: 3px;
+    width: 70px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.alexa-name{
+    font-weight: bold;
+}
+
 /*Footer*/
 footer { 
     background-color:#0c1a1e; 

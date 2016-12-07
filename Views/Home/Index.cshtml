@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4500" id="bs-carousel">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="6000" id="bs-carousel">
     <div class="overlay"></div>
     <ol class="carousel-indicators">
         <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
@@ -41,59 +41,93 @@
         </div>
     </div>
 </div>
-<div id="iconDisplay" class="jumbotron-fluid">
-    <div class="row">
-        <div id="homeIcons" class="col-lg-3">
-            <h4 align="center">Create your own recipes</h4>
-            <center><img src="~/Content/Pictures/OtherIcons/ChefIcon.png" /></center>
-            <br />
-            <p align="center">Upgrade to 2001 by having all of<br />grandma's recipes online!<br />Easy to create and retrieve</p>
-        </div>
-        <div id="homeIcons" class="col-lg-3">
-            <h4 align="center">Easy to use lookup</h4>
-            <center><img src="~/Content/Pictures/OtherIcons/CookbookIcon.png" /></center>
-            <br />
-            <p align="center">Easily lookup recipes you have<br />created, saved, and recently used.<br />All in one spot!</p>
-        </div>
-        <div id="homeIcons" class="col-lg-3">
-            <h4 align="center">Favorites on the go</h4>
-            <center><img src="~/Content/Pictures/OtherIcons/CookingIcon.png" /></center>
-            <br />
-            <p align="center">Want to claim to your friends<br />that what you cooked is yours?<br />Save your favorites!</p>
-        </div>
-        <div id="homeIcons" class="col-lg-3">
-            <h4 align="center">Add Ingredients to your cart</h4>
-            <center><img src="~/Content/Pictures/OtherIcons/ShoppingCartIcon.png" /></center>
-            <br />
-            <p align="center">Digital technology is amazing!<br />Store recipe specific ingredients that you can retreive<br />This was created by a Millenial</p>
+
+<section class="module parallax parallax-1">
+    <div class="container">
+        <h1>Your Recipes<br /><br />Your Legacy</h1>
+    </div>
+</section>
+
+<section class="module content">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="homeIcons" class="col-lg-3">
+                <h3 align="center">Create your own recipes</h3>
+                <br />
+                <center><img src="~/Content/Pictures/OtherIcons/ChefIcon.png" /></center>
+                <br />
+                <p align="center">Upgrade to 2001 by having all of<br />grandma's recipes online!<br />Easy to create and retrieve</p>
+            </div>
+            <div id="homeIcons" class="col-lg-3">
+                <h3 align="center">Easy to use lookup</h3>
+                <br />
+                <center><img src="~/Content/Pictures/OtherIcons/CookbookIcon.png" /></center>
+                <br />
+                <p align="center">Easily lookup recipes you have<br />created, saved, and recently used.<br />All in one spot!</p>
+            </div>
+            <div id="homeIcons" class="col-lg-3">
+                <h3 align="center">Favorites on the go</h3>
+                <br />
+                <center><img src="~/Content/Pictures/OtherIcons/CookingIcon.png" /></center>
+                <br />
+                <p align="center">Want to claim to your friends<br />that what you cooked is yours?<br />Save your favorites!</p>
+            </div>
+            <div id="homeIcons" class="col-lg-3">
+                <h3 align="center">Add Ingredients to your cart</h3>
+                <br />
+                <center><img src="~/Content/Pictures/OtherIcons/ShoppingCartIcon.png" /></center>
+                <br />
+                <p align="center">Digital technology is amazing!<br />Store recipe specific ingredients that you can retreive.</p>
+            </div>
         </div>
     </div>
-</div>
-<div class="jumbotron-fluid">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="~/Content/Pictures/FamilyCooking.jpg" />
+</section>
+
+<section class="module parallax parallax-2">
+    <div class="container">
+        <h1>Lose the book<br /><br />Go Digital</h1>
+    </div>
+</section>
+
+<section class="module content">
+    <div class="container">
+        <img src="~/Content/Pictures/AmazonAlexaDevices.png" />
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="alexa-example" class="alexa user-speak">
+                    <div class="example-section">
+                        <p class="user-frame-1">"Alexa,"<br />"Open Home Chef"</p>
+                        <p class="user-frame-2"></p>
+                        <p class="user-frame-3"></p>
+                        <p class="user-frame-4"></p>
+                        <p class="user-frame-5"></p>
                     </div>
-                    <div class="back">
-                        <h1 align="center"><br /><strong>Fun for all ages!<br /><br />Use the Amazon Alexa to ask what type of ingredients, <br />description and more each recipe has!</strong></h1>
+                    <div class="user-portfolio">
+                        <img src="~/Content/Pictures/Talking Person.png" />
+                        <div class="user-basic">
+                            <div class="user-name">You</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div id="alexa-example" class="alexa alexa-speak">
+                    <div class="example-section">
+                        <p class="alexa-frame-1">"Welcome to Home Chef."<br />"What type of recipe are you looking for today?"</p>
+                        <p class="alexa-frame-2"></p>
+                        <p class="alexa-frame-3"></p>
+                        <p class="alexa-frame-4"></p>
+                        <p class="alexa-frame-5"></p>
+                    </div>
+                    <div class="alexa-portfolio">
+                        <img src="~/Content/Pictures/AmazonEcho.png" />
+                        <div class="alexa-basic">
+                            <div class="alexa-name">Amazon Alexa Enabled Device</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="~/Content/Pictures/CookingTwo.jpg" />
-                    </div>
-                    <div class="back">
-                        <h1 align="center"><br /><strong>Grandma's Recipes<br /><br />All in one spot for your recipes and others <br />be able to search by <br />category, ingredients, and more!</strong></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+</section>
