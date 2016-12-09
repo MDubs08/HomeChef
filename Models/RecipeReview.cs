@@ -12,6 +12,7 @@ namespace HomeChef.Models
         [Key]
 
         public int ID { get; set; }
+        [Display(Name = "Average Rating")]
         public int? AverageRating { get; set; }
 
         [ForeignKey("Review")]

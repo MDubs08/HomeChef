@@ -131,7 +131,7 @@ h5#recipeDetails{
     top: 50%;
     left: 50%;
     z-index: 3;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 rgba(0,0,0,.75);
@@ -144,6 +144,8 @@ h5#recipeDetails{
 .hero h1 {
     font-size: 6em;    
     font-weight: bold;
+    color: #ffffff;
+    opacity: 1;
     margin: 0;
     padding: 0;
 }
@@ -171,7 +173,7 @@ h5#recipeDetails{
     height: 100%;
     z-index: 2;
     background-color: #080d15;
-    opacity: .7;
+    opacity: .1;
 }
 
 .fade-carousel .slides .slide-1, 
@@ -242,6 +244,17 @@ h5#recipeDetails{
     text-align: center;
 }
 
+.bg-overlay#recipeReview {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/recipeReviewHeader.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
+
 /*Parallax*/
 section.module:last-child {
   margin-bottom: 0;
@@ -292,6 +305,10 @@ section.module.parallax-1 {
 
 section.module.parallax-2 {
     background-image: url('Pictures/CookingTwo.jpg');
+}
+
+section.module.parallax-3 {
+    background-image: url('Pictures/googlehomeheader.jpg');
 }
 
 @media all and (min-width: 600px) {

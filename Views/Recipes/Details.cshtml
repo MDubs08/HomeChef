@@ -91,7 +91,7 @@
             </ul>
             <div class="tab-content" id="recipeContent">
                 <div role="tabpanel" class="tab-pane active" id="Ingredients">
-                    @Html.DisplayFor(model => model.Ingredient.Quantity) @Html.DisplayFor(model => model.Ingredient.Measurement) @Html.DisplayFor(model => model.Ingredient.Name)
+                    @Html.DisplayFor(model => model.RecipeIngredient.Ingredient.Quantity) @Html.DisplayFor(model => model.RecipeIngredient.Ingredient.Measurement) @Html.DisplayFor(model => model.RecipeIngredient.Ingredient.Name)
                     <ul>
                         <li>1 pound Sweet Italian Sausage</li>
                         <li>3/4 pound Lean Ground Beef</li>
@@ -103,7 +103,7 @@
                     </ul>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Instructions">
-                    @Html.DisplayFor(model => model.Instruction.Steps)
+                    @Html.DisplayFor(model => model.Instruction.Step.Steps)
                     <ul>
                         <li>In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 tablespoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.</li>
                         <li>Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.</li>
@@ -264,11 +264,11 @@
                                                         <blockquote>
                                                             <div class="row">
                                                                 <div class="col-sm-3 text-center">
-                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/DonaldTrump.jpg" style="width: 100px;height:100px;">
+                                                                    <img class="img-circle" src="~/Content/Pictures/CustomerTestimonial/JessicaAlba.png" style="width: 100px;height:100px;">
                                                                 </div>
                                                                 <div class="col-sm-9">
-                                                                    <p>I made this for all my friends at the FBI while they worked hard at reading someone's emails.</p>
-                                                                    <small>Donald Trump</small>
+                                                                    <p>5* all day!</p>
+                                                                    <small>Jessica Alba</small>
                                                                 </div>
                                                             </div>
                                                         </blockquote>
@@ -285,7 +285,7 @@
                     </div>
                     <br />
                     <div align="center">
-                        @Html.ActionLink("Write a review", "Create", "Reviews")
+                        @Html.ActionLink("Write a review", "Create", "RecipeReviews")
                     </div>
                 </div>
             </div>

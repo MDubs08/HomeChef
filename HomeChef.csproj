@@ -307,6 +307,7 @@
     <Content Include="Content\Pictures\CustomerTestimonial\Kanye West.jpg" />
     <Content Include="Content\Pictures\CustomerTestimonial\KenBone.jpg" />
     <Content Include="Content\Pictures\FamilyCooking.jpg" />
+    <Content Include="Content\Pictures\googlehomeheader.jpg" />
     <Content Include="Content\Pictures\Lasanga.jpg" />
     <Content Include="Content\Pictures\MenuPictures\Appetizer.jpg" />
     <Content Include="Content\Pictures\MenuPictures\Breakfast.jpg" />
@@ -326,6 +327,9 @@
     <Content Include="Content\Pictures\OtherIcons\CookingIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\ShoppingCartIcon.png" />
     <Content Include="Content\Pictures\recipeHeader.jpg" />
+    <Content Include="Content\Pictures\RecipePictures\BaconSalad.jpg" />
+    <Content Include="Content\Pictures\RecipePictures\JerkChickenPizza.JPG" />
+    <Content Include="Content\Pictures\recipeReviewHeader.jpg" />
     <Content Include="Content\Pictures\shoppingCartHeader.jpg" />
     <Content Include="Content\Pictures\SocialMediaIcons\Email-icon-32.png" />
     <Content Include="Content\Pictures\SocialMediaIcons\Facebook-icon-32.png" />
@@ -466,7 +470,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Pictures\RecipePictures\" />
     <Folder Include="Migrations\201612051937024_Steps\" />
   </ItemGroup>
   <ItemGroup>
