@@ -23,7 +23,7 @@ namespace HomeChef.Controllers
 
             if (!String.IsNullOrEmpty(search))
             {
-                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.RecipeIngredient.Ingredient.Name.Contains(search));
+                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.RecipeIngredient.Ingredient.Name.Contains(search) || s.Meal.MealTime.ToString().Contains(search) || s.Meal.MealType.ToString().Contains(search));
             }
             var recipe = db.Recipe.Include(r => r.Image).Include(r => r.RecipeIngredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
             return View(recipes);
@@ -32,18 +32,39 @@ namespace HomeChef.Controllers
         // GET: Recipes/Search
         public ActionResult Search(string search)
         {
-            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.RecipeIngredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video);
-            return Json(recipe, JsonRequestBehavior.AllowGet);
+            var recipes = from m in db.Recipe
+                          select m;
+
+            if(!String.IsNullOrEmpty(search))
+            {
+                recipes = recipes.Where(s => s.Name.Contains(search) || s.Description.Contains(search) || s.RecipeIngredient.Ingredient.Name.Contains(search) || s.Meal.MealTime.ToString().Contains(search) || s.Meal.MealType.ToString().Contains(search));
+            }
+            return Json(recipes, JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: Recipes/Category
+        public ActionResult Category(string category)
+        {
+            var categories = from m in db.Recipe
+                           select m;
+
+            if(!String.IsNullOrEmpty(category))
+            {
+                categories = categories.Where(s => s.Meal.MealTime.ToString().Contains(category) || s.Meal.MealType.ToString().Contains(category));
+            }
+            var recipe = db.Recipe.Include(r => r.Image).Include(r => r.RecipeIngredient).Include(r => r.Instruction).Include(r => r.Meal).Include(r => r.Video).Where(x => x.Meal.MealTime.Equals(category) || x.Meal.MealType.Equals(category));
+            return View(categories);
         }
 
         // GET: Recipes/Details/5
         public ActionResult Details(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Recipe recipe = db.Recipe.Find(id);
+            Recipe recipe = db.Recipe.Include(r => r.Instruction).Include(r => r.Instruction.Step).Include(r => r.RecipeIngredient).Include(r => r.RecipeIngredient.Ingredient).Include(r => r.Image).Include(r => r.Meal).Include(r => r.Video).Where(x => x.ID == id).SingleOrDefault();
             if (recipe == null)
             {
                 return HttpNotFound();

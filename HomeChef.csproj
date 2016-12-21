@@ -326,6 +326,7 @@
     <Content Include="Content\Pictures\OtherIcons\CookbookIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\CookingIcon.png" />
     <Content Include="Content\Pictures\OtherIcons\ShoppingCartIcon.png" />
+    <Content Include="Content\Pictures\recipeDetailHeader.jpg" />
     <Content Include="Content\Pictures\recipeHeader.jpg" />
     <Content Include="Content\Pictures\RecipePictures\BaconSalad.jpg" />
     <Content Include="Content\Pictures\RecipePictures\JerkChickenPizza.JPG" />

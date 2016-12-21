@@ -29,26 +29,36 @@ namespace HomeChef.Models
     }
     public enum MealType
     {
+        [Display(Name = "Appetizer")]
         Appetizer,
+        [Display(Name = "Dessert")]
         Dessert,
+        [Display(Name = "Drink")]
         Drink,
         [Display(Name = "Main Course")]
         MainCourse,
+        [Display(Name = "Salad")]
         Salad,
         [Display(Name = "Side Dish")]
         SideDish,
+        [Display(Name = "Snack")]
         Snack,
+        [Display(Name = "Soup")]
         Soup
     }
     public enum HolidayMeal
     {
+        [Display(Name = "Christmas")]
         Christmas,
         [Display(Name = "Cinco De Mayo")]
         CincoDeMayo,
+        [Display(Name = "Easter")]
         Easter,
         [Display(Name = "Father's Day")]
         FathersDay,
+        [Display(Name = "Halloween")]
         Halloween,
+        [Display(Name = "Hanukkah")]
         Hanukkah,
         [Display(Name = "Independence Day")]
         IndependenceDay,
@@ -58,6 +68,7 @@ namespace HomeChef.Models
         NewYears,
         [Display(Name = "St. Patrick's Day")]
         StPatricksDay,
+        [Display(Name = "Thanksgiving")]
         Thanksgiving,
         [Display(Name = "Valentine's Day")]
         ValentinesDay

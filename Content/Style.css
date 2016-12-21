@@ -243,7 +243,16 @@ h5#recipeDetails{
     padding-top: 50px;
     text-align: center;
 }
-
+.bg-overlay#recipeDetails {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/recipeDetailHeader.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
 .bg-overlay#recipeReview {
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('Pictures/recipeReviewHeader.jpg');
     background-repeat: no-repeat;

@@ -3,20 +3,16 @@
 @{
     ViewBag.Title = "Details";
 }
-<div class="container" id="header">
+<div id="recipeDetails" class="container-fluid bg-overlay">
     <div class="row">
-        <div class="col-sm-4">
-            <h1 align="center">$ AD SPACE $</h1>
-        </div>
-        <div class="col-sm-4" id="adRevenue" align="center">
-            <iframe src="//giphy.com/embed/l2Sq7slmyIePuP32g" width="300" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        </div>
-        <div class="col-sm-4">
-            <h1 align="center">$ MORE ADS $</h1>
-        </div>
+        <h1>Home Chef</h1>
+        <br />
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <br />
+        <br />
     </div>
 </div>
-
+<br />
 <div id="recipeDetails" class="container">
     <div class="preview col-md-6">
         <div class="preview-pic tab-content">
